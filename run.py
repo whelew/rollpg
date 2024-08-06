@@ -8,8 +8,24 @@ def new_game():
     character_name = input("What is your characters name:")
     return character_name
 
+def select_race():
+    pick_race = input("Now select a race, are you a Human, Dwarf or an Elf:\n")
+    race = pick_race.lower()
+    if race == "dwarf":
+        race = "dwarf"
+    elif race == "human":
+        race = "human"
+    elif race == "elf":
+        race = "elf"
+    else:
+        print("I've not heard of that race before.. please select one from the list.\n")
+        select_race()
+    return race
+
 def main():
     character_name = new_game()
-    print(character_name)
+    print(f'Yes... {character_name}, a very heroic name!\n')
+    race = select_race()
+    print(f"A {race} you say...\n")
 
 main()
