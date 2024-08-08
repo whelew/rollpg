@@ -2,9 +2,18 @@
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 import math
+import sys, time, random
+
+def slow_print(text):
+    for t in text:
+        sys.stdout.write(t)
+        sys.stdout.flush()
+        time.sleep(0.06)
+
 
 def new_game():
-    print("Welcome to RollPG.")
+    slow_print("Welcome to RollPG. You are about to embark on an epic quest.\n")
+    slow_print("Are you ready to take on the challenge?\n")
         
 def character_name():
     """
@@ -12,7 +21,7 @@ def character_name():
     Checks to see if input is blank or contains white space.
     Returns name if none of the above.
     """
-    print("To begin your new adventure we need a name.")
+    slow_print("To begin your new adventure we need a name.")
     while True:
         name = input("What is your characters name:")
         if any(n.isdigit() for n in name):
@@ -53,8 +62,8 @@ def select_race():
 def main():
     new_game()
     c_name = character_name()
-    print(f'Yes... {c_name}, a very heroic name!\n')
+    slow_print(f'Yes... {c_name}, a very heroic name!\n')
     race = select_race()
-    print(f"A {race} you say...\n")
+    slow_print(f"A {race.capitalize()} you say...\n")
 
 main()
