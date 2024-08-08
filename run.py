@@ -5,6 +5,9 @@ import math
 import sys, time, random
 
 def slow_print(text):
+    """
+    Slowly prints out text. 
+    """
     for t in text:
         sys.stdout.write(t)
         sys.stdout.flush()
@@ -58,6 +61,17 @@ def select_race():
         else:
             print("I've not heard of that race before.. please select one from the list.\n")
     return race
+
+class Monster:
+    """ Creates an instance of Monster """
+    def __init__(self, name, hp, attack):
+    self.name = name
+    self.hp = hp
+    self.attack = attack
+  
+    def description(self):
+        """Describe the encounter"""
+        return f"A wild {self.name} appears, what will you do?"
 
 def main():
     new_game()
