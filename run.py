@@ -2,7 +2,8 @@
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 import math
-import sys, time, random
+import sys, time
+from random import randint
 
 def slow_print(text):
     """
@@ -24,7 +25,7 @@ def character_name():
     Checks to see if input is blank or contains white space.
     Returns name if none of the above.
     """
-    slow_print("To begin your new adventure we need a name.")
+    slow_print("To begin your new adventure we need a name.\n")
     while True:
         name = input("What is your characters name:")
         if any(n.isdigit() for n in name):
@@ -75,15 +76,26 @@ class Monster:
 
     def stats(self):
         """Set the encounter stats"""
-        return f"{self.name} Health: {self.hp} Attack: {self.attack}"
+        return f"{self.name} Health:{self.hp} Attack:{self.attack}"
 
 def random_encounter():
-    encounter = randint(1, 2)
+    encounter = randint(1, 5)
     if encounter == 1:
-        enc_mnst = Monster("goblin", 10, 2)
+        enc_mnst = Monster("Goblin", 10, 2)
+    elif encounter == 2:
+        enc_mnst = Monster("Wolf", 12, 2)
+    elif encounter == 3:
+        enc_mnst = Monster("Orge", 20, 4)
+    elif encounter == 4:
+        enc_mnst = Monster("Skeleton", 10, 3)
     else:
-        enc_mnst = Monster("wolf", 12, 2)
+        enc_mnst = Monster("Dragon", 100, 20)
     return enc_mnst  
+
+def start_encounter():
+    level_one = random_encounter()
+    print(level_one.description())
+    print(level_one.stats())
 
 def main():
     new_game()
@@ -91,5 +103,8 @@ def main():
     slow_print(f'Yes... {c_name}, a very heroic name!\n')
     race = select_race()
     slow_print(f"A {race.capitalize()} you say...\n")
+    start_encounter()
+    start_encounter()
+
 
 main()
