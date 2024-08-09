@@ -16,8 +16,8 @@ def slow_print(text):
 
 
 def new_game():
-    slow_print("Welcome to RollPG. You are about to embark on an epic quest.\n")
-    slow_print("Are you ready to take on the challenge?\n")
+    print("Welcome to RollPG. You are about to embark on an epic quest.\n")
+    print("Are you ready to take on the challenge?\n")
         
 def character_name():
     """
@@ -25,7 +25,7 @@ def character_name():
     Checks to see if input is blank or contains white space.
     Returns name if none of the above.
     """
-    slow_print("To begin your new adventure we need a name.\n")
+    print("To begin your new adventure we need a name.\n")
     while True:
         name = input("What is your characters name:")
         if any(n.isdigit() for n in name):
@@ -96,6 +96,12 @@ def start_encounter():
     level_one = random_encounter()
     print(level_one.description())
     print(level_one.stats())
+    print("Will you attack yes or no?")
+    reaction = input("please type y or n:\n")
+    if reaction == "y":
+        print("the fight begins")
+    else:
+        print("try to flee")
 
 def main():
     new_game()
