@@ -73,6 +73,10 @@ class Monster:
         """Describe the encounter"""
         return f"A wild {self.name} appears, what will you do?"
 
+    def stats(self):
+        """Set the encounter stats"""
+        return f"{self.name} Health: {self.hp} Attack: {self.attack}"
+
 def random_encounter():
     encounter = randint(1, 2)
     if encounter == 1:
