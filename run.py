@@ -65,13 +65,21 @@ def select_race():
 class Monster:
     """ Creates an instance of Monster """
     def __init__(self, name, hp, attack):
-    self.name = name
-    self.hp = hp
-    self.attack = attack
+        self.name = name
+        self.hp = hp
+        self.attack = attack
   
     def description(self):
         """Describe the encounter"""
         return f"A wild {self.name} appears, what will you do?"
+
+def random_encounter():
+    encounter = randint(1, 2)
+    if encounter == 1:
+        enc_mnst = Monster("goblin", 10, 2)
+    else:
+        enc_mnst = Monster("wolf", 12, 2)
+    return enc_mnst  
 
 def main():
     new_game()
