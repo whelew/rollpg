@@ -5,6 +5,36 @@ import math
 import sys, time
 from random import randint
 
+class Hero:
+    """Creates an instance of Hero"""
+    def __init__(self, name, hp, attack):
+        self.name = name
+        self.hp = hp
+        self.attack = attack
+    
+    def description(self):
+        """Describes Hero"""
+        return f"You are a {self.name} on a mighty quest."
+    
+    def stats(self):
+        """Returns Hero Stats"""
+        return f"{self.name} Health:{self.hp} Attack:{self.attack}"
+
+class Monster:
+    """ Creates an instance of Monster """
+    def __init__(self, name, hp, attack):
+        self.name = name
+        self.hp = hp
+        self.attack = attack
+  
+    def description(self):
+        """Describe the encounter"""
+        return f"A wild {self.name} appears, what will you do?"
+
+    def stats(self):
+        """Set the encounter stats"""
+        return f"{self.name} Health:{self.hp} Attack:{self.attack}"
+
 def slow_print(text):
     """
     Slowly prints out text. 
@@ -14,10 +44,9 @@ def slow_print(text):
         sys.stdout.flush()
         time.sleep(0.06)
 
-
 def new_game():
-    print("Welcome to RollPG. You are about to embark on an epic quest.\n")
-    print("Are you ready to take on the challenge?\n")
+    print("Welcome to RollPG. You are about to embark on an epic quest.")
+    print("Are you ready to take on the challenge?")
         
 def character_name():
     """
@@ -63,36 +92,6 @@ def select_race():
             print("I've not heard of that race before.. please select one from the list.\n")
     return race
 
-class Hero:
-    """Creates an instance of Hero"""
-    def __init__(self, name, hp, attack):
-        self.name = name
-        self.hp = hp
-        self.attack = attack
-    
-    def description(self):
-        """Describes Hero"""
-        return f"You are a {self.name} on a mighty quest."
-    
-    def stats(self):
-        """Returns Hero Stats"""
-        return f"{self.name} Health:{self.hp} Attack:{self.attack}"
-
-class Monster:
-    """ Creates an instance of Monster """
-    def __init__(self, name, hp, attack):
-        self.name = name
-        self.hp = hp
-        self.attack = attack
-  
-    def description(self):
-        """Describe the encounter"""
-        return f"A wild {self.name} appears, what will you do?"
-
-    def stats(self):
-        """Set the encounter stats"""
-        return f"{self.name} Health:{self.hp} Attack:{self.attack}"
-
 def combat(enemy, hero):
     """
     Takes Monster and Hero class as arguments.
@@ -116,10 +115,10 @@ def combat(enemy, hero):
             h_damage = randint(1, h_attack)
             e_health = e_health - h_damage 
             h_health = h_health - e_damage
-            print(f'{e_name} dealt {e_damage}.')
-            print(f'You dealt {h_damage}')
+            print(f'The {e_name} dealt {e_damage}. You dealt {h_damage}.')
             if e_health <= 0:
-                print(f"{e_name} died.")
+                print(f"You successfully killed the {e_name}!")
+                hero.hp = h_health
                 break
             if h_health <= 0:
                 print("You died.")
@@ -130,8 +129,7 @@ def combat(enemy, hero):
         else:
             print("You need to make a choice, 1 or 2?")
     
-    print("combat over")
-               
+    return hero.stats()
 
 def random_encounter():
     encounter = randint(1, 5)
@@ -144,7 +142,7 @@ def random_encounter():
     elif encounter == 4:
         enc_mnst = Monster("Skeleton", 10, 3)
     else:
-        enc_mnst = Monster("Dragon", 100, 20)
+        enc_mnst = Monster("Dragon", 30, 5)
     return enc_mnst
     
 def start_encounter(hero):
@@ -161,10 +159,10 @@ def start_encounter(hero):
 def main():
     new_game()
     c_name = character_name()
-    slow_print(f'Yes... {c_name}, a very heroic name!\n')
+    print(f'Yes... {c_name}, a very heroic name!\n')
     race = select_race()
-    slow_print(f"A {getattr(race, 'name')} you say...\n")
+    print(f"A {getattr(race, 'name')} you say...\n")
     start_encounter(race)
-
+    start_encounter(race)
 
 main()
