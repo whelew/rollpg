@@ -51,13 +51,13 @@ def select_race():
         race = pick_race
 
         if race == "1":
-            race = "human"
+            race = Hero("Human", 50, 3)
             break
         elif race == "2":
-            race = "dwarf"
+            race = Hero("Dwarf", 60, 2)
             break
         elif race == "3":
-            race = "elf"
+            race = Hero("Elf", 40, 4)
             break
         else:
             print("I've not heard of that race before.. please select one from the list.\n")
@@ -93,9 +93,13 @@ class Monster:
         """Set the encounter stats"""
         return f"{self.name} Health:{self.hp} Attack:{self.attack}"
 
-def combat(enemy):
+def combat(enemy, hero):
     e_health = getattr(enemy, "hp")
-    print(e_health)
+    h_health = getattr(hero, "hp")
+    e_attack = getattr(enemy, "attack")
+    h_attack = getattr(hero, "attack")
+    print(f"Hero: Health:{h_health} Attack:{h_attack}")
+    print(f"Wolf: Health:{e_health} Attack:{e_attack}")      
 
 def random_encounter():
     encounter = randint(1, 5)
@@ -111,14 +115,14 @@ def random_encounter():
         enc_mnst = Monster("Dragon", 100, 20)
     return enc_mnst
     
-def start_encounter():
+def start_encounter(hero):
     level_one = random_encounter()
     print(level_one.description())
     print(level_one.stats())
     print("Will you attack yes or no?")
     reaction = input("please type y or n:\n")
     if reaction == "y":
-        combat(level_one)
+        combat(level_one, hero)
     else:
         print("try to flee")
 
@@ -127,9 +131,8 @@ def main():
     c_name = character_name()
     slow_print(f'Yes... {c_name}, a very heroic name!\n')
     race = select_race()
-    slow_print(f"A {race.capitalize()} you say...\n")
-    start_encounter()
-    start_encounter()
+    slow_print(f"A {getattr(race, 'name')} you say...\n")
+    start_encounter(race)
 
 
 main()
