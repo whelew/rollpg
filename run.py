@@ -63,6 +63,21 @@ def select_race():
             print("I've not heard of that race before.. please select one from the list.\n")
     return race
 
+class Hero:
+    """Creates an instance of Hero"""
+    def __init__(self, name, hp, attack):
+        self.name = name
+        self.hp = hp
+        self.attack = attack
+    
+    def description(self):
+        """Describes Hero"""
+        return f"You are a {self.name} on a mighty quest."
+    
+    def stats(self):
+        """Returns Hero Stats"""
+        return f"{self.name} Health:{self.hp} Attack:{self.attack}"
+
 class Monster:
     """ Creates an instance of Monster """
     def __init__(self, name, hp, attack):
@@ -78,6 +93,10 @@ class Monster:
         """Set the encounter stats"""
         return f"{self.name} Health:{self.hp} Attack:{self.attack}"
 
+def combat(enemy):
+    e_health = getattr(enemy, "hp")
+    print(e_health)
+
 def random_encounter():
     encounter = randint(1, 5)
     if encounter == 1:
@@ -90,8 +109,8 @@ def random_encounter():
         enc_mnst = Monster("Skeleton", 10, 3)
     else:
         enc_mnst = Monster("Dragon", 100, 20)
-    return enc_mnst  
-
+    return enc_mnst
+    
 def start_encounter():
     level_one = random_encounter()
     print(level_one.description())
@@ -99,7 +118,7 @@ def start_encounter():
     print("Will you attack yes or no?")
     reaction = input("please type y or n:\n")
     if reaction == "y":
-        print("the fight begins")
+        combat(level_one)
     else:
         print("try to flee")
 
