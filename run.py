@@ -94,12 +94,44 @@ class Monster:
         return f"{self.name} Health:{self.hp} Attack:{self.attack}"
 
 def combat(enemy, hero):
+    """
+    Takes Monster and Hero class as arguments.
+    While loop will repeat until hero or enemy health drop to or below 0.
+    Rolls randint as damage between 1 and n_attack, subtracts this from n_health.
+    """
+    e_name = getattr(enemy, "name")
+    h_name = getattr(hero, "name")
     e_health = getattr(enemy, "hp")
     h_health = getattr(hero, "hp")
     e_attack = getattr(enemy, "attack")
     h_attack = getattr(hero, "attack")
-    print(f"Hero: Health:{h_health} Attack:{h_attack}")
-    print(f"Wolf: Health:{e_health} Attack:{e_attack}")      
+
+    while h_health > 0 or e_health > 0:
+        print(f"Hero: Health:{h_health} Attack:{h_attack}")
+        print(f"{e_name}: Health:{e_health} Attack:{e_attack}")
+        print("1 to attack or 2 to flee")
+        choice = input("enter 1 or 2:")
+        if choice == "1":
+            e_damage = randint(1, e_attack)
+            h_damage = randint(1, h_attack)
+            e_health = e_health - h_damage 
+            h_health = h_health - e_damage
+            print(f'{e_name} dealt {e_damage}.')
+            print(f'You dealt {h_damage}')
+            if e_health <= 0:
+                print(f"{e_name} died.")
+                break
+            if h_health <= 0:
+                print("You died.")
+                break        
+        elif choice == "2":
+            print("You flee from combat")
+            break
+        else:
+            print("You need to make a choice, 1 or 2?")
+    
+    print("combat over")
+               
 
 def random_encounter():
     encounter = randint(1, 5)
