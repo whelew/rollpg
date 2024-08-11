@@ -122,13 +122,16 @@ def start_encounter(hero):
     print(level_one.description())
     print(level_one.stats())
     print("Will you attack yes or no?")
-    reaction = input("please type 1 for yes or 2 for no:\n")
-    if reaction == "1":
-        combat(level_one, hero)
-    elif reaction == "2":
-        print("try to flee")
-    else:
-        print("Please input 1 or 2")
+    while True:
+        reaction = input("Please type 1 for yes or 2 for no:\n")
+        if reaction == "1":
+            combat(level_one, hero)
+            break
+        elif reaction == "2":
+            print("try to flee")
+            break
+        else:
+            print("Please input 1 or 2")
 
 def main():
     new_game()
