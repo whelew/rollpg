@@ -4,6 +4,7 @@
 import math
 import sys, time
 from random import randint
+import monster
 
 class Hero:
     """Creates an instance of Hero"""
@@ -18,21 +19,6 @@ class Hero:
     
     def stats(self):
         """Returns Hero Stats"""
-        return f"{self.name} Health:{self.hp} Attack:{self.attack}"
-
-class Monster:
-    """ Creates an instance of Monster """
-    def __init__(self, name, hp, attack):
-        self.name = name
-        self.hp = hp
-        self.attack = attack
-  
-    def description(self):
-        """Describe the encounter"""
-        return f"A wild {self.name} appears, what will you do?"
-
-    def stats(self):
-        """Set the encounter stats"""
         return f"{self.name} Health:{self.hp} Attack:{self.attack}"
 
 def slow_print(text):
@@ -130,31 +116,19 @@ def combat(enemy, hero):
             print("You need to make a choice, 1 or 2?")
     
     return hero.stats()
-
-def random_encounter():
-    encounter = randint(1, 5)
-    if encounter == 1:
-        enc_mnst = Monster("Goblin", 10, 2)
-    elif encounter == 2:
-        enc_mnst = Monster("Wolf", 12, 2)
-    elif encounter == 3:
-        enc_mnst = Monster("Orge", 20, 4)
-    elif encounter == 4:
-        enc_mnst = Monster("Skeleton", 10, 3)
-    else:
-        enc_mnst = Monster("Dragon", 30, 5)
-    return enc_mnst
     
 def start_encounter(hero):
-    level_one = random_encounter()
+    level_one = monster.random_encounter()
     print(level_one.description())
     print(level_one.stats())
     print("Will you attack yes or no?")
-    reaction = input("please type y or n:\n")
-    if reaction == "y":
+    reaction = input("please type 1 for yes or 2 for no:\n")
+    if reaction == "1":
         combat(level_one, hero)
-    else:
+    elif reaction == "2":
         print("try to flee")
+    else:
+        print("Please input 1 or 2")
 
 def main():
     new_game()
