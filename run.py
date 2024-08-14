@@ -139,10 +139,11 @@ def start_quest():
     The Goblins and BugBears that take residence there have started to flee the cave.
     They used to be no problem but something is driving them out.
     Your quest is to find out what the disturbance is and make it go away.
-    Good luck.""")
+    Good luck.\n
+    """)
     while True:
         print("Head towards the Forest (1) or go to the Tavern (2)")
-        choice = input("Enter 1 or 2")
+        choice = input("Enter 1 or 2:")
         if choice == "1":
             print("You enter the Forest.")
             break
