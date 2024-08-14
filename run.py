@@ -78,6 +78,17 @@ def select_race():
             print("I've not heard of that race before.. please select one from the list.\n")
     return race
 
+def first_weapon(hero):
+    """Changes Hero.attack to weapon.damage stats"""
+    basic_weapon = item.basic_weapon(hero)
+    basic_weapon.description()
+    hero.attack = basic_weapon.damage
+
+def acquire_weapon(hero, weapon):
+    """Changes Hero.attack to weapon.damage stats"""
+    weapon.description()
+    hero.attack = weapon.damage
+
 def combat(enemy, hero):
     """
     Takes Monster and Hero class as arguments.
@@ -138,7 +149,8 @@ def wishing_well(hero):
     while True:
         choice = input("Enter 1 to throw a coin, 2 to walkaway:\n")
         if choice == "1":
-            print("You gain an item")
+            new_item = item.well_item()
+            acquire_weapon(hero, new_item)
             break
         if choice == "2":
             goblin = monster.goblin_encounter()
@@ -182,16 +194,15 @@ def start_quest(hero):
             break
         else:
             print("Please enter 1 or 2.")
-    
+
 
 def main():
     new_game()
     c_name = character_name()
     print(f'Yes... {c_name}, a very heroic name!\n')
     hero = select_race()
-    print(f"A {getattr(hero, 'name')} you say...\n")
-    weapon = item.basic_weapon(hero)
-    weapon.description()
+    print(f"A {getattr(hero, 'name')} you say...")
+    first_weapon(hero)
     start_quest(hero)
 
 main()
