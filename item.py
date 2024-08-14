@@ -16,10 +16,14 @@ def basic_weapon(hero):
     """Gives starting race a weapon"""
     h_name = getattr(hero, "name")
     if h_name == "Human":
-        Item("Iron Sword", 6)
+        iron_sword = Item("Iron Sword", 3)
+        return iron_sword
     elif h_name == "Dwarf":
-        Item("Iron Axe", 5)
+        iron_axe = Item("Iron Axe", 2)
+        return iron_axe
     elif h_name == "Elf":
-        Item("Short Bow", 7)
+        short_bow = Item("Short Bow", 4)
+        return short_bow
     else:
-        Item("Hands", 2)
+        hands = Item("Hands", 1)
+        return hands

@@ -190,6 +190,8 @@ def main():
     print(f'Yes... {c_name}, a very heroic name!\n')
     hero = select_race()
     print(f"A {getattr(hero, 'name')} you say...\n")
+    weapon = item.basic_weapon(hero)
+    weapon.description()
     start_quest(hero)
 
 main()
