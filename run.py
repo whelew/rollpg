@@ -133,6 +133,33 @@ def start_encounter(hero):
         else:
             print("Please input 1 or 2")
 
+def wishing_well():
+    print("You stumble upon a wishing well. Would you like to throw a coin?")
+    while True:
+        choice = input("Enter 1 to throw a coin, 2 to walkaway:")
+        if choice == "1":
+            print("You gain an item")
+            break
+        if choice == "2":
+            print("You walk away and get attacked by a goblin.")
+            break
+        else:
+            print("Make a choice, 1 or 2.")      
+
+def enter_forest():
+    print("You enter the forest. You follow a stone path that leads deep into the forest.")
+    choice = randint(1, 4)
+    if choice == 1:
+        wishing_well()
+    elif choice == 2:
+        print("choice 2")
+    elif choice == 3:
+        print("choice 3")
+    elif choice == 4:
+        print("You keep walking")
+    else:
+        print("You keep walking")
+
 def start_quest():
     print("""Let your journey begin.
     There has been a lot of disturbances from a nearby Dungeon in the Forest.
@@ -146,6 +173,7 @@ def start_quest():
         choice = input("Enter 1 or 2:")
         if choice == "1":
             print("You enter the Forest.")
+            enter_forest()
             break
         if choice == "2":
             print("You enter the Tavern")
