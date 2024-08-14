@@ -95,13 +95,13 @@ def combat(enemy, hero):
         print(f"Hero: Health:{h_health} Attack:{h_attack}")
         print(f"{e_name}: Health:{e_health} Attack:{e_attack}")
         print("1 to attack or 2 to flee")
-        choice = input("enter 1 or 2:")
+        choice = input("enter 1 or 2:\n")
         if choice == "1":
             e_damage = randint(1, e_attack)
             h_damage = randint(1, h_attack)
             e_health = e_health - h_damage 
             h_health = h_health - e_damage
-            print(f'The {e_name} dealt {e_damage}. You dealt {h_damage}.')
+            print(f'The {e_name} dealt {e_damage}. You dealt {h_damage}.\n')
             if e_health <= 0:
                 print(f"You successfully killed the {e_name}!")
                 hero.hp = h_health
@@ -136,21 +136,22 @@ def start_encounter(hero):
 def wishing_well(hero):
     print("You stumble upon a wishing well. Would you like to throw a coin?")
     while True:
-        choice = input("Enter 1 to throw a coin, 2 to walkaway:")
+        choice = input("Enter 1 to throw a coin, 2 to walkaway:\n")
         if choice == "1":
             print("You gain an item")
             break
         if choice == "2":
             goblin = monster.goblin_encounter()
-            print("You walk away and get attacked by a goblin.")
+            print("You walk away and get attacked by a goblin.\n")
             combat(goblin, hero)
+            print(hero.stats())
             break
         else:
             print("Make a choice, 1 or 2.")      
 
 def enter_forest(hero):
     print("You enter the forest. You follow a stone path that leads deep into the forest.")
-    choice = randint(1, 4)
+    choice = randint(1, 1)
     if choice == 1:
         wishing_well(hero)
     elif choice == 2:
@@ -172,9 +173,9 @@ def start_quest(hero):
     """)
     while True:
         print("Head towards the Forest (1) or go to the Tavern (2)")
-        choice = input("Enter 1 or 2:")
+        choice = input("Enter 1 or 2:\n")
         if choice == "1":
-            print("You enter the Forest.")
+            print("You enter the Forest.\n")
             enter_forest(hero)
             break
         if choice == "2":
@@ -191,7 +192,5 @@ def main():
     hero = select_race()
     print(f"A {getattr(hero, 'name')} you say...\n")
     start_quest(hero)
-    start_encounter(hero)
-    start_encounter(hero)
 
 main()
