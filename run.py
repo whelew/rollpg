@@ -143,10 +143,12 @@ def start_quest():
     while True:
         print("Head towards the Forest (1) or go to the Tavern (2)")
         choice = input("Enter 1 or 2")
-        if choice = "1":
+        if choice == "1":
             print("You enter the Forest.")
-        if choice = "2":
+            break
+        if choice == "2":
             print("You enter the Tavern")
+            break
         else:
             print("Please enter 1 or 2.")
     
@@ -157,6 +159,7 @@ def main():
     print(f'Yes... {c_name}, a very heroic name!\n')
     race = select_race()
     print(f"A {getattr(race, 'name')} you say...\n")
+    start_quest()
     start_encounter(race)
     start_encounter(race)
 
