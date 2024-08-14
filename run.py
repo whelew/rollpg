@@ -133,6 +133,24 @@ def start_encounter(hero):
         else:
             print("Please input 1 or 2")
 
+def start_quest():
+    print("""Let your journey begin.
+    There has been a lot of disturbances from a nearby Dungeon in the Forest.
+    The Goblins and BugBears that take residence there have started to flee the cave.
+    They used to be no problem but something is driving them out.
+    Your quest is to find out what the disturbance is and make it go away.
+    Good luck.""")
+    while True:
+        print("Head towards the Forest (1) or go to the Tavern (2)")
+        choice = input("Enter 1 or 2")
+        if choice = "1":
+            print("You enter the Forest.")
+        if choice = "2":
+            print("You enter the Tavern")
+        else:
+            print("Please enter 1 or 2.")
+    
+
 def main():
     new_game()
     c_name = character_name()
