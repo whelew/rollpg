@@ -38,3 +38,7 @@ def random_encounter():
     else:
         enc_mnst = Monster("Dragon", 40, 5)
     return enc_mnst
+
+def goblin_encounter():
+    goblin = Monster("Goblin", 10, 2)
+    return goblin

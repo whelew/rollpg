@@ -133,7 +133,7 @@ def start_encounter(hero):
         else:
             print("Please input 1 or 2")
 
-def wishing_well():
+def wishing_well(hero):
     print("You stumble upon a wishing well. Would you like to throw a coin?")
     while True:
         choice = input("Enter 1 to throw a coin, 2 to walkaway:")
@@ -141,16 +141,18 @@ def wishing_well():
             print("You gain an item")
             break
         if choice == "2":
+            goblin = monster.goblin_encounter()
             print("You walk away and get attacked by a goblin.")
+            combat(goblin, hero)
             break
         else:
             print("Make a choice, 1 or 2.")      
 
-def enter_forest():
+def enter_forest(hero):
     print("You enter the forest. You follow a stone path that leads deep into the forest.")
     choice = randint(1, 4)
     if choice == 1:
-        wishing_well()
+        wishing_well(hero)
     elif choice == 2:
         print("choice 2")
     elif choice == 3:
@@ -160,7 +162,7 @@ def enter_forest():
     else:
         print("You keep walking")
 
-def start_quest():
+def start_quest(hero):
     print("""Let your journey begin.
     There has been a lot of disturbances from a nearby Dungeon in the Forest.
     The Goblins and BugBears that take residence there have started to flee the cave.
@@ -173,7 +175,7 @@ def start_quest():
         choice = input("Enter 1 or 2:")
         if choice == "1":
             print("You enter the Forest.")
-            enter_forest()
+            enter_forest(hero)
             break
         if choice == "2":
             print("You enter the Tavern")
@@ -186,10 +188,10 @@ def main():
     new_game()
     c_name = character_name()
     print(f'Yes... {c_name}, a very heroic name!\n')
-    race = select_race()
-    print(f"A {getattr(race, 'name')} you say...\n")
-    start_quest()
-    start_encounter(race)
-    start_encounter(race)
+    hero = select_race()
+    print(f"A {getattr(hero, 'name')} you say...\n")
+    start_quest(hero)
+    start_encounter(hero)
+    start_encounter(hero)
 
 main()
