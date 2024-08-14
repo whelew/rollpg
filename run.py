@@ -5,6 +5,7 @@ import math
 import sys, time
 from random import randint
 import monster
+import item
 
 class Hero:
     """Creates an instance of Hero"""
@@ -54,13 +55,12 @@ def character_name():
     return name   
 
 def select_race():
-
+    """
+    Sets race to 1 of 3 options, using if elif statement to check 
+    user input if the user does not input 1, 2 or 3
+    the user will be told to select one from the list.
+    """
     while True:
-        """
-        Sets race to 1 of 3 options, using if elif statement to check 
-        user input if the user does not input 1, 2 or 3
-        the user will be told to select one from the list.
-        """
         print("Now select a race, are you a Human, Dwarf or an Elf")
         pick_race = input("Enter 1, 2, or 3:\n")
         race = pick_race
@@ -144,7 +144,6 @@ def wishing_well(hero):
             goblin = monster.goblin_encounter()
             print("You walk away and get attacked by a goblin.\n")
             combat(goblin, hero)
-            print(hero.stats())
             break
         else:
             print("Make a choice, 1 or 2.")      
