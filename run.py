@@ -78,17 +78,6 @@ def select_race():
             print("I've not heard of that race before.. please select one from the list.\n")
     return race
 
-def first_weapon(hero):
-    """Changes Hero.attack to weapon.damage stats"""
-    basic_weapon = item.basic_weapon(hero)
-    basic_weapon.description()
-    hero.attack = basic_weapon.damage
-
-def acquire_weapon(hero, weapon):
-    """Changes Hero.attack to weapon.damage stats"""
-    weapon.description()
-    hero.attack = weapon.damage
-
 def combat(enemy, hero):
     """
     Takes Monster and Hero class as arguments.
@@ -151,12 +140,12 @@ def wishing_well(hero):
         if choice == "1":
             chance = randint(1, 2)
             if chance == 1:
-                "You throw the coin and hear it hit something at the bottom of the well."
+                print("You throw the coin and hear it hit something at the bottom of the well.")
                 new_item = item.well_item()
                 acquire_weapon(hero, new_item)
                 break
             else:
-                "You throw a coin down a well.. nothing happens"
+                print("You throw a coin down a well.. nothing happens")
                 break
         if choice == "2":
             goblin = monster.goblin_encounter()
@@ -178,8 +167,10 @@ def enter_forest(hero):
         if engage == "1":
             bug_bear = monster.bugbear()
             combat(bug_bear, hero)
+        elif engage == "2":
+            print("You let the BugBear pass.")
         else:
-            ("You let the BugBear pass.")
+            print("Please enter 1 or 2.\n")
     elif choice == 3:
         print("choice 3")
     elif choice == 4:
@@ -208,6 +199,16 @@ def start_quest(hero):
         else:
             print("Please enter 1 or 2.")
 
+def first_weapon(hero):
+    """Changes Hero.attack to weapon.damage stats"""
+    basic_weapon = item.basic_weapon(hero)
+    basic_weapon.description()
+    hero.attack = basic_weapon.damage
+
+def acquire_weapon(hero, weapon):
+    """Changes Hero.attack to weapon.damage stats"""
+    weapon.description()
+    hero.attack = weapon.damage
 
 def main():
     new_game()
