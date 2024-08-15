@@ -27,12 +27,14 @@ class Inventory:
         self.items = [] #list to store unique items.
 
     def add_item(self, item):
+        """Adds item to inventroy"""
         if item not in self.items:
             self.items.append(item)
         else:
             print(f"{item.name} is already in the inventory.")
 
     def remove_item(self, item_name):
+        """Removes item from inventory"""
         for item in self.items:
             if item.name == item_name:
                 self.items.remove(item)
@@ -48,8 +50,7 @@ class Inventory:
             print("Inventory:")
             for item in self.items:
                 print(f"{item.item_info()}")
-
-    
+  
 def well_item():
     choice = randint(1, 4)
     if choice == 1:

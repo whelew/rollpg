@@ -5,6 +5,7 @@ import sys, time
 from random import randint
 import monster
 import item
+from item import Item, Inventory, Weapon
 
 class Hero:
     """Creates an instance of Hero"""
@@ -21,14 +22,7 @@ class Hero:
         """Returns Hero Stats"""
         return f"{self.name} Health:{self.hp} Attack:{self.attack}"
 
-def slow_print(text):
-    """
-    Slowly prints out text. 
-    """
-    for t in text:
-        sys.stdout.write(t)
-        sys.stdout.flush()
-        time.sleep(0.06)
+inventory = Inventory() #Inventory instance so it can be accessed globally
 
 def new_game():
     print("Welcome to RollPG. You are about to embark on an epic quest.")
@@ -155,7 +149,7 @@ def wishing_well(hero):
 
 def enter_forest(hero):
     print("You enter the forest. You follow a stone path that leads deep into the forest.")
-    choice = randint(1, 2)
+    choice = randint(2, 2)
     if choice == 1:
         wishing_well(hero)
     elif choice == 2:
@@ -165,6 +159,10 @@ def enter_forest(hero):
         if engage == "1":
             bug_bear = monster.bugbear()
             combat(bug_bear, hero)
+            print("You open the chest and find.. a key.")
+            key = Item("Key", "A rusty old key, I wonder what it opens...")
+            inventory.add_item(key)
+            inventory.display_inventory()
         elif engage == "2":
             print("You let the BugBear pass.")
         else:
@@ -210,12 +208,12 @@ def acquire_weapon(hero, weapon):
 
 def main():
     new_game()
-    item.Inventory() #creates instance of inventory
     c_name = character_name()
     print(f'Yes... {c_name}, a very heroic name!\n')
     hero = select_race()
     print(f"A {getattr(hero, 'name')} you say...")
     first_weapon(hero)
     start_quest(hero)
+    
 
 main()
