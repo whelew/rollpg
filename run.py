@@ -210,6 +210,7 @@ def acquire_weapon(hero, weapon):
 
 def main():
     new_game()
+    item.Inventory() #creates instance of inventory
     c_name = character_name()
     print(f'Yes... {c_name}, a very heroic name!\n')
     hero = select_race()
