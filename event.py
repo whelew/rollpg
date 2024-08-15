@@ -33,13 +33,17 @@ def begger():
     choice = input("please enter 1 to spare a coin, 2 to walk by:")
     while True:
         if choice == "1":
-            outcome = ["The begger thanks you, you gain 2 charisma.", 
-                       "The begger gives you a piece of parchment, it says have a good day.",
-                       "The begger spits at you, 'a single coin.. cheapskate.'"
-                       """The begger transforms right in front of your eyes
+            outcome = [("The begger thanks you, you gain 2 charisma."), 
+                       ("The begger gives you a piece of parchment."),
+                       ("The begger spits at you, 'a single coin.. cheapskate.'"),
+                       ("""The begger transforms right in front of your eyes
                        from a decrepid old man, back to a youthful man. He cries out, thank
-                       you! You have freed me from the curse that old hag put on me."""]
+                       you! You have freed me from the curse that old hag put on me.""")]
             random_outcome = random.choice(outcome)
+            if random_outcome == outcome[1]:
+                parchment = item.Item("Parchment", "The note from the begger.")
+                print(random_outcome)
+                return parchment
             print(random_outcome)
             break
         elif choice == "2":
@@ -51,12 +55,12 @@ def begger():
             print("Please enter 1, 2.")
 
 
-def third_event():
+def time_loop():
     print("event 3")
 
 def random_event():
     """Chooses a random event from a list of functions"""
-    events = [stranger, other_event, third_event] #store function references
+    events = [stranger, begger, time_loop] #store function references
     result = random.choice(events)
     return result() #returns call of chosen event
 

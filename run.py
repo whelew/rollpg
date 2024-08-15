@@ -227,7 +227,6 @@ def acquire_weapon(hero, weapon):
     hero.attack = weapon.damage
 
 def main():
-    event.random_event()
     new_game()
     c_name = character_name()
     print(f'Yes... {c_name}, a very heroic name!\n')
