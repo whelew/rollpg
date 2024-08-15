@@ -1,10 +1,6 @@
 import random
 import item
 
-def random_event():
-    """Chooses a random event from a list of functions"""
-    pass
-
 def stranger():
     """Find a straner, make a choice to rob him, save him or kill him."""
     print("You find an injured stranger pleading for help.")
@@ -30,6 +26,18 @@ def stranger():
             print("Please enter 1, 2 or 3.")
     
     return new_item
+
+def other_event():
+    print("event 2")
+
+def third_event():
+    print("event 3")
+
+def random_event():
+    """Chooses a random event from a list of functions"""
+    events = [stranger, other_event, third_event] #store function references
+    result = random.choice(events)
+    return result() #returns call of chosen event
 
 """
 choice = input("please enter 1, 2 or 3")
