@@ -42,3 +42,7 @@ def random_encounter():
 def goblin_encounter():
     goblin = Monster("Goblin", 10, 2)
     return goblin
+
+def bugbear():
+    bugbear = Monster("BugBear", 15, 3)
+    return bugbear

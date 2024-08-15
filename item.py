@@ -27,11 +27,14 @@ def basic_weapon(hero):
         return hands
     
 def well_item():
-    choice = randint(1, 3)
+    choice = randint(1, 4)
     if choice == 1:
         weapon = Item("Great Sword", 9)
     elif choice == 2:
         weapon = Item("Battle Axe", 8)
+    elif choice == 3:
+        ("You found an empty bucket with a coin in it.")
     else:
         weapon = Item("Great Bow", 10)
     return weapon
+

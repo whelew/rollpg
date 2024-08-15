@@ -149,9 +149,15 @@ def wishing_well(hero):
     while True:
         choice = input("Enter 1 to throw a coin, 2 to walkaway:\n")
         if choice == "1":
-            new_item = item.well_item()
-            acquire_weapon(hero, new_item)
-            break
+            chance = randint(1, 2)
+            if chance == 1:
+                "You throw the coin and hear it hit something at the bottom of the well."
+                new_item = item.well_item()
+                acquire_weapon(hero, new_item)
+                break
+            else:
+                "You throw a coin down a well.. nothing happens"
+                break
         if choice == "2":
             goblin = monster.goblin_encounter()
             print("You walk away and get attacked by a goblin.\n")
@@ -166,7 +172,14 @@ def enter_forest(hero):
     if choice == 1:
         wishing_well(hero)
     elif choice == 2:
-        print("choice 2")
+        print("You see a treasure chest being pulled on a cart by a Bugbear.")
+        print("Would you like to attack the BugBear?")
+        engage = input("Enter 1 to attack or 2 to let him pass:\n")
+        if engage == "1":
+            bug_bear = monster.bugbear()
+            combat(bug_bear, hero)
+        else:
+            ("You let the BugBear pass.")
     elif choice == 3:
         print("choice 3")
     elif choice == 4:
