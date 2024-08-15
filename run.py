@@ -6,6 +6,7 @@ from random import randint
 import monster
 import item
 from item import Item, Inventory, Weapon
+import event
 
 class Hero:
     """Creates an instance of Hero"""
@@ -153,20 +154,23 @@ def enter_forest(hero):
     if choice == 1:
         wishing_well(hero)
     elif choice == 2:
-        print("You see a treasure chest being pulled on a cart by a Bugbear.")
-        print("Would you like to attack the BugBear?")
-        engage = input("Enter 1 to attack or 2 to let him pass:\n")
-        if engage == "1":
-            bug_bear = monster.bugbear()
-            combat(bug_bear, hero)
-            print("You open the chest and find.. a key.")
-            key = Item("Key", "A rusty old key, I wonder what it opens...")
-            inventory.add_item(key)
-            inventory.display_inventory()
-        elif engage == "2":
-            print("You let the BugBear pass.")
-        else:
-            print("Please enter 1 or 2.\n")
+        while True:
+            print("You see a treasure chest being pulled on a cart by a Bugbear.")
+            print("Would you like to attack the BugBear?")
+            engage = input("Enter 1 to attack or 2 to let him pass:\n")
+            if engage == "1":
+                bug_bear = monster.bugbear()
+                combat(bug_bear, hero)
+                print("You open the chest and find.. a key.")
+                key = Item("Key", "A rusty old key, I wonder what it opens...")
+                inventory.add_item(key)
+                inventory.display_inventory()
+                break
+            elif engage == "2":
+                print("You let the BugBear pass.")
+                break
+            else:
+                print("Please enter 1 or 2.\n")
     else:
         print("You keep walking")
 
