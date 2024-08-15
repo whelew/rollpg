@@ -1,7 +1,6 @@
 # Your code goes here.
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
-import math
 import sys, time
 from random import randint
 import monster
@@ -85,7 +84,6 @@ def combat(enemy, hero):
     Rolls randint as damage between 1 and n_attack, subtracts this from n_health.
     """
     e_name = getattr(enemy, "name")
-    h_name = getattr(hero, "name")
     e_health = getattr(enemy, "hp")
     h_health = getattr(hero, "hp")
     e_attack = getattr(enemy, "attack")
@@ -157,7 +155,7 @@ def wishing_well(hero):
 
 def enter_forest(hero):
     print("You enter the forest. You follow a stone path that leads deep into the forest.")
-    choice = randint(1, 1)
+    choice = randint(1, 2)
     if choice == 1:
         wishing_well(hero)
     elif choice == 2:

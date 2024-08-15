@@ -1,6 +1,6 @@
 from random import randint
 
-class Item:
+class Weapon:
     "Creates instance of item"
     def __init__(self, name, damage):
         self.name = name
@@ -14,27 +14,34 @@ def basic_weapon(hero):
     """Gives starting race a weapon"""
     h_name = getattr(hero, "name")
     if h_name == "Human":
-        iron_sword = Item("Iron Sword", 5)
+        iron_sword = Weapon("Iron Sword", 5)
         return iron_sword
     elif h_name == "Dwarf":
-        iron_axe = Item("Iron Axe", 4)
+        iron_axe = Weapon("Iron Axe", 4)
         return iron_axe
     elif h_name == "Elf":
-        short_bow = Item("Short Bow", 6)
+        short_bow = Weapon("Short Bow", 6)
         return short_bow
     else:
-        hands = Item("Hands", 1)
+        hands = Weapon("Hands", 1)
         return hands
-    
+
+class Bag:
+    """Creates Instance of Bag"""
+
+    def __init__(self):
+        pass
+        
+
 def well_item():
     choice = randint(1, 4)
     if choice == 1:
-        weapon = Item("Great Sword", 9)
+        weapon = Weapon("Great Sword", 9)
     elif choice == 2:
-        weapon = Item("Battle Axe", 8)
+        weapon = Weapon("Battle Axe", 8)
     elif choice == 3:
         ("You found an empty bucket with a coin in it.")
     else:
-        weapon = Item("Great Bow", 10)
+        weapon = Weapon("Great Bow", 10)
     return weapon
 
