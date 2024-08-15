@@ -27,8 +27,29 @@ def stranger():
     
     return new_item
 
-def other_event():
-    print("event 2")
+def begger():
+    print("You stumble across a helpless begger..")
+    print('"Please Sir, Spare a coin?')
+    choice = input("please enter 1 to spare a coin, 2 to walk by:")
+    while True:
+        if choice == "1":
+            outcome = ["The begger thanks you, you gain 2 charisma.", 
+                       "The begger gives you a piece of parchment, it says have a good day.",
+                       "The begger spits at you, 'a single coin.. cheapskate.'"
+                       """The begger transforms right in front of your eyes
+                       from a decrepid old man, back to a youthful man. He cries out, thank
+                       you! You have freed me from the curse that old hag put on me."""]
+            random_outcome = random.choice(outcome)
+            print(random_outcome)
+            break
+        elif choice == "2":
+            print("I can't believe you would walk past a dying old man.")
+            print("Lose 1000 karma.") #reference to the video game Fallout
+            print("The begger curses you, you can only turn left.")
+            break
+        else:
+            print("Please enter 1, 2.")
+
 
 def third_event():
     print("event 3")
