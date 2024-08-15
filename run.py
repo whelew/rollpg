@@ -149,7 +149,7 @@ def wishing_well(hero):
 
 def enter_forest(hero):
     print("You enter the forest. You follow a stone path that leads deep into the forest.")
-    choice = randint(2, 2)
+    choice = randint(1, 3)
     if choice == 1:
         wishing_well(hero)
     elif choice == 2:
@@ -167,12 +167,28 @@ def enter_forest(hero):
             print("You let the BugBear pass.")
         else:
             print("Please enter 1 or 2.\n")
-    elif choice == 3:
-        print("choice 3")
-    elif choice == 4:
-        print("You keep walking")
     else:
         print("You keep walking")
+
+def forest_middle(hero):
+    print("You carry on down the path. You hear a sound coming from behind a rock.")
+    print("Would you like to check out the noise?")
+    choice = input("1 for yes, 2 for no:\n")
+    while True:
+        if choice == "1":
+            chance = randint(1, 2)
+            if chance == 1:
+                print("You see a creature eating a human for lunch.")
+                print("It sees you looking its way.")
+                start_encounter()
+                break
+            else:
+                pass
+        elif choice == "2":
+            print("You carry on walking down the path.")
+            break
+        else:
+            print("Please enter 1 or 2:")
 
 def start_quest(hero):
     print("""Let your journey begin.

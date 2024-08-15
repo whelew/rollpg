@@ -47,6 +47,7 @@ class Inventory:
         if not self.items:
             print("Iventory is empty")
         else:
+            print("An item has been added to your inventory.")
             print("Inventory:")
             for item in self.items:
                 print(f"{item.item_info()}")
