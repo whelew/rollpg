@@ -51,6 +51,13 @@ class Inventory:
             print("Inventory:")
             for item in self.items:
                 print(f"{item.item_info()}")
+
+    def is_item_in_inventory(self, item_name):
+        """Checks if an item is in the inventory"""
+        for item in self.items:
+            if item.name == item_name:
+                return True
+        return False
   
 def well_item():
     choice = randint(1, 4)
