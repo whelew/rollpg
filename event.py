@@ -11,21 +11,23 @@ def stranger():
             print("You decide to help the stranger.")
             print("You are able to use some medicine on their wound.")
             print("They follow the path back to the town.")
-            new_item = item.Item("Ring", "A gold ring.")
-            break
+            new_item = item.Item("Gold Ring", "A golden ring, it looks well worn.")
+            return new_item
         elif choice == "2":
             print("You steal the poor strangers belongings.")
-            break
+            print("Among his rations and belongings you find a gold ring.")
+            print("You imagine the poor stranger won't last very long come night fall.")
+            print("You hear a wolf howl in the distance...")
+            new_item = item.Item("Gold Ring", "A golden ring, it looks well worn.")
+            return new_item
         elif choice == "3":
             print("You decide to put them out of their misery.")
             print("You take out your weapon and stop their sufferring.")
-            print("You take a moment to make a grave for them and give them a burial")
+            print("You take a moment to make a grave for them and give them a burial.")
             print("Gain 50 karma.")
             break
         else:
             print("Please enter 1, 2 or 3.")
-    
-    return new_item
 
 def begger():
     print("You stumble across a helpless begger..")
@@ -54,6 +56,7 @@ def begger():
             break
         else:
             print("Please enter 1, 2.")
+
 
 
 def time_loop():

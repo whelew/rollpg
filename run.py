@@ -230,7 +230,20 @@ def acquire_weapon(hero, weapon):
     weapon.description()
     hero.attack = weapon.damage
 
+def handle_event(loot):
+    try:
+        item = event.random_event()
+        if item:
+            loot.add_item(item)
+            loot.display_inventory()
+        else: 
+            raise ValueError("You best get back to your quest.\n")
+        
+    except ValueError as e:
+        print(e)
+
 def main():
+    handle_event(inventory)
     new_game()
     c_name = character_name()
     print(f'Yes... {c_name}, a very heroic name!\n')
