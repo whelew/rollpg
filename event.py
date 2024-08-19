@@ -33,12 +33,13 @@ def begger():
     choice = input("please enter 1 to spare a coin, 2 to walk by:")
     while True:
         if choice == "1":
-            outcome = [("The begger thanks you, you gain 2 charisma."), 
-                       ("The begger gives you a piece of parchment."),
-                       ("The begger spits at you, 'a single coin.. cheapskate.'"),
-                       ("""The begger transforms right in front of your eyes
-                       from a decrepid old man, back to a youthful man. He cries out, thank
-                       you! You have freed me from the curse that old hag put on me.""")]
+            outcome = [
+                ("The begger thanks you, you gain 2 charisma."), 
+                ("The begger gives you a piece of parchment."),
+                ("The begger spits at you, 'a single coin.. cheapskate.'"),
+                ("""The begger transforms right in front of your eyes
+                from a decrepid old man, back to a youthful man. He cries out, thank
+                you! You have freed me from the curse that old hag put on me.""")]
             random_outcome = random.choice(outcome)
             if random_outcome == outcome[1]:
                 parchment = item.Item("Parchment", "The note from the begger.")

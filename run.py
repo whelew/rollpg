@@ -184,7 +184,11 @@ def forest_middle(hero):
             if chance == 1:
                 print("You see a creature eating a human for lunch.")
                 print("It sees you looking its way.")
-                start_encounter()
+                start_encounter(hero)
+                print("It looks like the creaute was trying to hide an item.")
+                map = Item("Map", "A map of the dungeon, this might come in handy...")
+                inventory.add_item(map)
+                inventory.display_inventory()
                 break
             else:
                 pass
@@ -234,6 +238,7 @@ def main():
     print(f"A {getattr(hero, 'name')} you say...")
     first_weapon(hero)
     start_quest(hero)
+    forest_middle(hero)
     
 
 main()
