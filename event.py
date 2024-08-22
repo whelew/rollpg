@@ -64,8 +64,13 @@ def time_loop():
     choice = input("please enter 1 for yes, 2 for no")
     while True:
         if choice == "1":
-            print("You slowly approach the ")
-            break
+            print("You slowly approach the portal.")
+            print("A hand reaches out and pulls you through it.")
+            print("Everything goes black.")
+            print("After a few seconds you find yourself stood in the same spot.")
+            print("Only the portal has gone and you are holding something.")
+            time_stone = item.Item("Time Stone", "What does it do?")
+            return time_stone
         elif choice == "2":
             print("Do something else")
             break
