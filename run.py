@@ -1,11 +1,10 @@
 # Your code goes here.
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
-import sys, time
 from random import randint
 import monster
 import item
-from item import Item, Inventory, Weapon
+from item import Item, Inventory
 import event
 
 class Hero:
@@ -228,7 +227,7 @@ def acquire_weapon(hero, weapon):
     weapon.description()
     hero.attack = weapon.damage
 
-def handle_event(r_event):
+def check_for_item(r_event):
     """
     Will take the random_event() function as an argument.
     If instance of item is returned from event.
@@ -245,8 +244,12 @@ def handle_event(r_event):
     except ValueError as e:
         print(e)
 
+def handle_event():
+    pass
+    
+
 def main():
-    handle_event(inventory)
+    check_for_item(inventory)
     c_name = character_name()
     print(f'Yes... {c_name}, a very heroic name!\n')
     hero = select_race()
