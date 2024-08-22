@@ -1,6 +1,7 @@
 # Your code goes here.
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
+import os
 from random import randint
 import monster
 import item
@@ -82,6 +83,7 @@ def combat(enemy, hero):
     h_attack = getattr(hero, "attack")
 
     while h_health > 0 or e_health > 0:
+        # os.system("clear")
         print(f"Hero: Health:{h_health} Attack:{h_attack}")
         print(f"{e_name}: Health:{e_health} Attack:{e_attack}")
         print("1 to attack or 2 to flee")
@@ -196,13 +198,12 @@ def forest_middle(hero):
             print("Please enter 1 or 2:")
 
 def start_quest(hero):
-    print("""Let your journey begin.
-    There has been a lot of disturbances from a nearby Dungeon in the Forest.
-    The Goblins and BugBears that take residence there have started to flee the cave.
-    They used to be no problem but something is driving them out.
-    Your quest is to find out what the disturbance is and make it go away.
-    Good luck.\n
-    """)
+    print("Let your journey begin.")
+    print("There has been a lot of disturbances from a nearby Dungeon in the Forest.")
+    print("The Goblins and BugBears that take residence there have started to flee the cave.")
+    print("They used to be no problem but something is driving them out.")
+    print("Your quest is to find out what the disturbance is and make it go away.")
+    print("Good luck adventurer!\n")
     while True:
         print("Head towards the Forest (1) or go to the Tavern (2)")
         choice = input("Enter 1 or 2:\n")
@@ -266,12 +267,12 @@ def main():
     c_name = character_name()
     print(f'Yes... {c_name}, a very heroic name!\n')
     hero = select_race()
-    print(f"A {getattr(hero, 'name')} you say...")
+    print(f"A {getattr(hero, 'name')} you say...\n")
     first_weapon(hero)
-    handle_event(inventory)
-    t_stone_event(hero)
     start_quest(hero)
     forest_middle(hero)
+    handle_event(inventory)
+    t_stone_event(hero)
     
 
 main()
