@@ -58,9 +58,19 @@ def begger():
             print("Please enter 1, 2.")
 
 
-
 def time_loop():
-    print("event 3")
+    print("A portal appears in front of you.")
+    print("Would you like to approach and interact with the portal?")
+    choice = input("please enter 1 for yes, 2 for no")
+    while True:
+        if choice == "1":
+            print("You slowly approach the ")
+            break
+        elif choice == "2":
+            print("Do something else")
+            break
+        else:
+            print("Please enter 1, 2.")
 
 def random_event():
     """Chooses a random event from a list of functions"""

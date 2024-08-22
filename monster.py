@@ -17,26 +17,28 @@ class Monster:
 
 def random_encounter():
     encounter = randint(1, 10)
-    if encounter == 1:
-        enc_mnst = Monster("Goblin", 10, 2)
-    elif encounter == 2:
-        enc_mnst = Monster("Wolf", 12, 2)
-    elif encounter == 3:
-        enc_mnst = Monster("Orge", 20, 4)
-    elif encounter == 4:
-        enc_mnst = Monster("Skeleton", 10, 3)
-    elif encounter == 5:
-        enc_mnst = Monster("BugBear", 15, 3)
-    elif encounter == 6:
-        enc_mnst = Monster("Centaur", 20, 3)
-    elif encounter == 7:
-        enc_mnst = Monster("Cockatrice", 20, 4)
-    elif encounter == 8:
-        enc_mnst = Monster("Imp", 5, 5)
-    elif encounter == 9:
-        enc_mnst = Monster("Stone Giant", 40, 4)
-    else:
-        enc_mnst = Monster("Dragon", 40, 5)
+
+    match encounter:
+        case 1:
+            enc_mnst = Monster("Goblin", 10, 2)
+        case 2:
+            enc_mnst = Monster("Wolf", 12, 2)
+        case 3:
+            enc_mnst = Monster("Orge", 20, 4)
+        case 4:
+            enc_mnst = Monster("Skeleton", 10, 3)
+        case 5:
+            enc_mnst = Monster("BugBear", 15, 3)
+        case 6:
+            enc_mnst = Monster("Centaur", 20, 3)
+        case 7:
+            enc_mnst = Monster("Cockatrice", 20, 4)
+        case 8:
+            enc_mnst = Monster("Imp", 5, 5)
+        case 9:
+            enc_mnst = Monster("Stone Giant", 40, 4)
+        case 10:
+            enc_mnst = Monster("Dragon", 40, 5)
     return enc_mnst
 
 def goblin_encounter():
