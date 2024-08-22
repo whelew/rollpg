@@ -244,17 +244,28 @@ def check_for_item(r_event):
     except ValueError as e:
         print(e)
 
-def handle_event():
-    pass
-    
+def t_stone_event(hero):
+    value = inventory.is_item_in_inventory("Time Stone")
+    h_health = getattr(hero, "hp")
+    if value == True:
+        print("It looks like going through the portal has aged you.")
+        print("You feel stronger, all your battle scars have healed.")
+        print("You now have 100 health!")
+        print("You may have lost about 10 years of your life though.")
+        h_health = 100
+        hero.hp = h_health
+    else:
+        pass
 
 def main():
-    check_for_item(inventory)
+
     c_name = character_name()
     print(f'Yes... {c_name}, a very heroic name!\n')
     hero = select_race()
     print(f"A {getattr(hero, 'name')} you say...")
     first_weapon(hero)
+    check_for_item(inventory)
+    t_stone_event(hero)
     start_quest(hero)
     forest_middle(hero)
     
