@@ -227,7 +227,7 @@ def acquire_weapon(hero, weapon):
     weapon.description()
     hero.attack = weapon.damage
 
-def check_for_item(r_event):
+def handle_event(r_item):
     """
     Will take the random_event() function as an argument.
     If instance of item is returned from event.
@@ -236,8 +236,8 @@ def check_for_item(r_event):
     try:
         item = event.random_event()
         if item:
-            r_event.add_item(item)
-            r_event.display_inventory()
+            r_item.add_item(item)
+            r_item.display_inventory()
         else: 
             raise ValueError("You best get back to your quest.\n")
         
@@ -245,13 +245,17 @@ def check_for_item(r_event):
         print(e)
 
 def t_stone_event(hero):
+    """
+    Checks to see if the player has Time Stone in their inventory.
+    If they do set players health to 100.
+    """
     value = inventory.is_item_in_inventory("Time Stone")
     h_health = getattr(hero, "hp")
     if value == True:
         print("It looks like going through the portal has aged you.")
         print("You feel stronger, all your battle scars have healed.")
         print("You now have 100 health!")
-        print("You may have lost about 10 years of your life though.")
+        print("You may have lost about 10 years of your life though.\n")
         h_health = 100
         hero.hp = h_health
     else:
@@ -264,7 +268,7 @@ def main():
     hero = select_race()
     print(f"A {getattr(hero, 'name')} you say...")
     first_weapon(hero)
-    check_for_item(inventory)
+    handle_event(inventory)
     t_stone_event(hero)
     start_quest(hero)
     forest_middle(hero)
