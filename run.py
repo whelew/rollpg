@@ -24,10 +24,6 @@ class Hero:
         return f"{self.name} Health:{self.hp} Attack:{self.attack}"
 
 inventory = Inventory() #Inventory instance so it can be accessed globally
-
-def new_game():
-    print("Welcome to RollPG. You are about to embark on an epic quest.")
-    print("Are you ready to take on the challenge?")
         
 def character_name():
     """
@@ -35,6 +31,8 @@ def character_name():
     Checks to see if input is blank or contains white space.
     Returns name if none of the above.
     """
+    print("Welcome to RollPG. You are about to embark on an epic quest.")
+    print("Are you ready to take on the challenge!")
     print("To begin your new adventure we need a name.\n")
     while True:
         name = input("What is your characters name:")
@@ -231,6 +229,11 @@ def acquire_weapon(hero, weapon):
     hero.attack = weapon.damage
 
 def handle_event(r_event):
+    """
+    Will take the random_event() function as an argument.
+    If instance of item is returned from event.
+    Item will be added to global inventory.
+    """
     try:
         item = event.random_event()
         if item:
@@ -244,7 +247,6 @@ def handle_event(r_event):
 
 def main():
     handle_event(inventory)
-    new_game()
     c_name = character_name()
     print(f'Yes... {c_name}, a very heroic name!\n')
     hero = select_race()
