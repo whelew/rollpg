@@ -60,13 +60,11 @@ class Inventory:
         return False
   
 def well_item():
-    choice = randint(1, 4)
+    choice = randint(1, 3)
     if choice == 1:
         weapon = Weapon("Great Sword", 9)
     elif choice == 2:
         weapon = Weapon("Battle Axe", 8)
-    elif choice == 3:
-        ("You found an empty bucket with a coin in it.")
     else:
         weapon = Weapon("Great Bow", 10)
     return weapon

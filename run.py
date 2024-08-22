@@ -5,7 +5,7 @@ import os
 from random import randint
 import monster
 import item
-from item import Item, Inventory
+from item import Item, Inventory, Weapon
 import event
 
 class Hero:
@@ -132,12 +132,12 @@ def wishing_well(hero):
         if choice == "1":
             chance = randint(1, 2)
             if chance == 1:
-                print("You throw the coin and hear it hit something at the bottom of the well.")
+                print("You throw the coin and hear it hit something at the bottom of the well.\n")
                 new_item = item.well_item()
                 acquire_weapon(hero, new_item)
                 break
             else:
-                print("You throw a coin down a well.. nothing happens")
+                print("You throw a coin down a well.. nothing happens\n")
                 break
         if choice == "2":
             goblin = monster.goblin_encounter()
