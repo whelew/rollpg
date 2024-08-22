@@ -72,7 +72,9 @@ def time_loop():
             time_stone = item.Item("Time Stone", "What does it do?")
             return time_stone
         elif choice == "2":
-            print("Do something else")
+            print("You decide that you will leave it.")
+            print("Messing around with random portals can never be good.")
+            print("Right...?")
             break
         else:
             print("Please enter 1, 2.")

@@ -230,12 +230,12 @@ def acquire_weapon(hero, weapon):
     weapon.description()
     hero.attack = weapon.damage
 
-def handle_event(loot):
+def handle_event(r_event):
     try:
         item = event.random_event()
         if item:
-            loot.add_item(item)
-            loot.display_inventory()
+            r_event.add_item(item)
+            r_event.display_inventory()
         else: 
             raise ValueError("You best get back to your quest.\n")
         
