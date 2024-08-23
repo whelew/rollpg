@@ -148,9 +148,12 @@ def cave_encounter(hero):
         elif reaction == "2":
             os.system("clear")
             print("You can't escape from this encounter.")
+            print("You have to fight this enemy.")
             print("Please enter 1:")
         else:
-            print("Please enter 1 or 2:")
+            os.system("clear")
+            print("Make sure you either enter 1 or 2 only.")
+            print("Will you attack yes or no?\n")
 
 def wishing_well(hero):
     print("You stumble upon a wishing well. Would you like to throw a coin?")

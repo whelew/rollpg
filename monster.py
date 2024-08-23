@@ -10,6 +10,10 @@ class Monster:
     def description(self):
         """Describe the encounter"""
         return f"A wild {self.name} appears, what will you do?\n"
+    
+    def cave_desc(self)
+        """Describe cave encounter"""
+        return f"The {self.name} sees you as its running. It goes to strike you.\n"
 
     def stats(self):
         """Set the encounter stats"""
