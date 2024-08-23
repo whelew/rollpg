@@ -283,6 +283,10 @@ def t_stone_event(hero):
         pass
 
 def check_for_map():
+    """
+    Checks your inventory to see if you have the Map item.
+    Returns True if you do False if you don't.
+    """
     print("You find yourself at the entrance of the cave.\n")
     value =inventory.is_item_in_inventory("Map")
     if value == True:
@@ -300,6 +304,7 @@ def check_for_map():
                 os.system("clear")
                 ("You enter the cave..\n")
                 decision = False
+                break
             else:
                 os.system("clear")
                 print("There's no point turning back.")
@@ -307,16 +312,22 @@ def check_for_map():
                 print("You need to finish the quest.")
                 print("You enter the cave.\n")
                 decision = False
+                break
     return decision
 
 def enter_cave(map):
+    """
+    Takes returned value of check_for_map as an argument.
+    If True skip cave system, else go into cave system.
+    """
     while True:
         if map == True:
             print("Using the map you are able to navigate quickly through the cave system.\n")
+            break
         else:
             print("Without knowing the cave system.")
             print("You stumble through the darkness trying your best to navigate the tunnels.\n")
-
+            break
 
 def main():
     c_name = character_name()
@@ -329,6 +340,7 @@ def main():
     handle_event(inventory)
     t_stone_event(hero)
     cave = check_for_map()
+    enter_cave(cave)
     
 
 main()
