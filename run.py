@@ -309,6 +309,15 @@ def check_for_map():
                 decision = False
     return decision
 
+def enter_cave(map):
+    while True:
+        if map == True:
+            print("Using the map you are able to navigate quickly through the cave system.\n")
+        else:
+            print("Without knowing the cave system.")
+            print("You stumble through the darkness trying your best to navigate the tunnels.\n")
+
+
 def main():
     c_name = character_name()
     print(f'Yes... {c_name}, a very heroic name!\n')
