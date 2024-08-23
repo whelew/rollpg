@@ -136,7 +136,7 @@ def start_encounter(hero):
 
 def cave_encounter(hero):
     level_one = monster.random_encounter()
-    print(level_one.description())
+    print(level_one.cave_desc())
     print(level_one.stats())
     print("Will you attack yes or no?\n")
     while True:
@@ -409,6 +409,41 @@ def healing_fountain(hero):
             break
         else:
             print("Please enter 1 or 2:\n")
+
+def treasure_chest():
+    print("You have been running through these tunnels for over an hour.")
+    print("Finally you reach the center of the cave system.")
+    print("Just before the entrance you see a chest with a sign above it.")
+    print("The Sign Says:\n")
+
+    print("Please open and use what is inside.")
+    print("It will help you I promise.")
+    print("Definitly not a mimic.")
+    print("Now I just need to find the key...\n")
+    
+    print("Would you like to open the chest?")
+    open_chest = inventory.is_item_in_inventory("Key")
+    choice = input("Enter 1 or 2:")
+    while True:
+        if choice == "1":
+            os.system("clear")
+            print("You try to open the chest.")
+            if open_chest == True:
+                print("You remember you found a key earlier.")
+                print("That BugBear must have been protecting it.")
+                print("You open the chest up to find a weapon.")
+            else:
+                print("The lock won't budge, it's sealed shut.")
+                print("If only you had the key.")
+            break
+        elif choice == "2":
+            print("You think the chest might be a mimic.")
+            print("Best to leave it alone.")
+            break
+        else:
+            print("Please enter 1 or 2:")
+
+
 
 
 def main():
