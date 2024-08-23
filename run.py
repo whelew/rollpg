@@ -282,7 +282,7 @@ def t_stone_event(hero):
     else:
         pass
 
-def cave():
+def check_for_map():
     print("You find yourself at the entrance of the cave.\n")
     value =inventory.is_item_in_inventory("Map")
     if value == True:
@@ -308,8 +308,8 @@ def cave():
                 print("You enter the cave.\n")
                 decision = False
     return decision
-def main():
 
+def main():
     c_name = character_name()
     print(f'Yes... {c_name}, a very heroic name!\n')
     hero = select_race()
@@ -319,7 +319,7 @@ def main():
     forest_middle(hero)
     handle_event(inventory)
     t_stone_event(hero)
-    cave()
+    cave = check_for_map()
     
 
 main()
