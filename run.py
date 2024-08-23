@@ -134,6 +134,24 @@ def start_encounter(hero):
         else:
             print("Please input 1 or 2")
 
+def cave_encounter(hero):
+    level_one = monster.random_encounter()
+    print(level_one.description())
+    print(level_one.stats())
+    print("Will you attack yes or no?\n")
+    while True:
+        reaction = input("Please type 1 for yes or 2 for no:\n")
+        if reaction == "1":
+            os.system("clear")
+            combat(level_one, hero)
+            break
+        elif reaction == "2":
+            os.system("clear")
+            print("You can't escape from this encounter.")
+            print("Please enter 1:")
+        else:
+            print("Please enter 1 or 2:")
+
 def wishing_well(hero):
     print("You stumble upon a wishing well. Would you like to throw a coin?")
     while True:
@@ -321,10 +339,9 @@ def cave_system(hero):
     print("You are able to get by for the most part unnoticed.")
     print("However a few spot you and decide to attack you.")
     print("Prepare yourself for the onslaught.")
-    cave_monster = monster.random_encounter()
-    encounters = [combat, combat, combat]
+    encounters = [cave_encounter, cave_encounter, cave_encounter]
     for encounter in encounters:
-        encounter(cave_monster, hero)
+        encounter(hero)
 
 def enter_cave(hero, map):
     """
@@ -341,7 +358,7 @@ def enter_cave(hero, map):
             cave_system(hero)
             break
 
-def healing_fountain(hero)
+def healing_fountain(hero):
     print("Congratulations, you managed to survive the cave system!")
     print("Fortunately for you a mystical light appears ahead of you.")
     print("You head towards it, it looks like a water fountain.")
@@ -380,7 +397,9 @@ def healing_fountain(hero)
                 print("You won't be needing luck from now on!")
                 h_health = 125
                 hero.hp = h_health
+                break
         elif choice == "2":
+            os.system("clear")
             print("You decide it is best not to drink from the water.")
             print("You're almost at the source of the problem in the cave.")
             print("You delve deeper.\n")
@@ -401,6 +420,7 @@ def main():
     t_stone_event(hero)
     cave = check_for_map()
     enter_cave(hero, cave)
+    healing_fountain(hero)
     
 
 main()

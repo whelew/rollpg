@@ -9,7 +9,7 @@ class Monster:
   
     def description(self):
         """Describe the encounter"""
-        return f"The {self.name} prepares itself for combat, what will you do?\n"
+        return f"A wild {self.name} appears, what will you do?\n"
 
     def stats(self):
         """Set the encounter stats"""
