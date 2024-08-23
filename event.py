@@ -12,9 +12,28 @@ def stranger():
             os.system("clear")
             print("You decide to help the stranger.")
             print("You are able to use some medicine on their wound.")
-            print("They follow the path back to the town.\n")
-            new_item = item.Item("Gold Ring", "A golden ring, it looks well worn.")
-            return new_item
+            print("Thank you for your help.")
+            print("You see a gold ring around the neck of the stranger.")
+            print("Do you demand the ring as payment for helping the stranger?")
+            print("Enter 1 for yes or 2 for no.")
+            sec_choice = input("Enter 1 or 2:\n")
+            while True:
+                if sec_choice == "1":
+                    print("Oh you want my ring? But it's all I have left!")
+                    print("You demand the gold ring off the stranger!")
+                    new_item = item.Item("Gold Ring", "A golden ring, it looks well worn.")
+                    print("The stranger follows the path back to the town crying.")
+                    print("He will most likely die of starvation now with no money left.")
+                    print("Lose 50 karma.\n")
+                    return new_item
+                elif sec_choice == "2":
+                    print("I would give you my gold ring, but it's all I have.")
+                    print("I was going to sell it when I got to town.")
+                    print("Thank you for your help.")
+                    print("I will pay you back when you return to town!\n")
+                    break
+                else:
+                    print("Please enter 1 or 2:\n")
         elif choice == "2":
             os.system("clear")
             print("You steal the poor strangers belongings.")

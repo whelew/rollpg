@@ -120,7 +120,7 @@ def start_encounter(hero):
     level_one = monster.random_encounter()
     print(level_one.description())
     print(level_one.stats())
-    print("Will you attack yes or no?")
+    print("Will you attack yes or no?\n")
     while True:
         reaction = input("Please type 1 for yes or 2 for no:\n")
         if reaction == "1":
@@ -315,7 +315,18 @@ def check_for_map():
                 break
     return decision
 
-def enter_cave(map):
+def cave_system(hero):
+    print("A horde of monsters are running your way.")
+    print("It looks like they are running away from something.")
+    print("You are able to get by for the most part unnoticed.")
+    print("However a few spot you and decide to attack you.")
+    print("Prepare yourself for the onslaught.")
+    cave_monster = monster.random_encounter()
+    encounters = [combat, combat, combat]
+    for encounter in encounters:
+        encounter(cave_monster, hero)
+
+def enter_cave(hero, map):
     """
     Takes returned value of check_for_map as an argument.
     If True skip cave system, else go into cave system.
@@ -327,7 +338,32 @@ def enter_cave(map):
         else:
             print("Without knowing the cave system.")
             print("You stumble through the darkness trying your best to navigate the tunnels.\n")
+            cave_system(hero)
             break
+
+def healing_fountain(hero)
+    print("Congratulations, you managed to survive the cave system!")
+    print("Fortunately for you a mystical light appears ahead of you.")
+    print("You head towards it, it looks like a water fountain.")
+    print("There is an inscription written in the middle of the fountain.")
+    print("It reads...\n")
+
+    print("For those kind of heart and who seek no riches.")
+    print("Drink from me and you shall be restored stronger than before.")
+    print("For those who have taken from the needy.")
+    print("Who have sinned and given in to the greedy.")
+    print("Do not take from these waters, your fate will have no reward.\n")
+
+    print("Do you want to drink from the fountains water?")
+    choice = input("Enter 1 or 2:\n")
+    while True:
+        if choice == "1":
+            pass
+        elif choice == "2":
+            pass
+        else:
+            print("Please enter 1 or 2:\n")
+
 
 def main():
     c_name = character_name()
@@ -340,7 +376,7 @@ def main():
     handle_event(inventory)
     t_stone_event(hero)
     cave = check_for_map()
-    enter_cave(cave)
+    enter_cave(hero, cave)
     
 
 main()
