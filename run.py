@@ -410,7 +410,7 @@ def healing_fountain(hero):
         else:
             print("Please enter 1 or 2:\n")
 
-def treasure_chest():
+def treasure_chest(hero):
     print("You have been running through these tunnels for over an hour.")
     print("Finally you reach the center of the cave system.")
     print("Just before the entrance you see a chest with a sign above it.")
@@ -432,6 +432,8 @@ def treasure_chest():
                 print("You remember you found a key earlier.")
                 print("That BugBear must have been protecting it.")
                 print("You open the chest up to find a weapon.")
+                dragon_blade = Weapon("Blade of Dragons", 20)
+                acquire_weapon(hero, dragon_blade)
             else:
                 print("The lock won't budge, it's sealed shut.")
                 print("If only you had the key.")
@@ -459,6 +461,7 @@ def main():
     cave = check_for_map()
     enter_cave(hero, cave)
     healing_fountain(hero)
+    treasure_chest(hero)
     
 
 main()

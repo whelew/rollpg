@@ -8,7 +8,7 @@ class Weapon:
 
     def description(self):
         """Describe the weapon"""
-        print(f"You have aquired a {self.name}. You now do between 1 and {self.damage} damage.\n")
+        print(f"You have aquired {self.name}. You now do between 1 and {self.damage} damage.\n")
 
 class Item:
     """Creates instance of Item"""

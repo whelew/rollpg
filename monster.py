@@ -53,3 +53,11 @@ def bugbear():
     print("You charge at the BugBear unleashing a mighty battle chant.")
     bugbear = Monster("BugBear", 15, 3)
     return bugbear
+
+def dragon_lord():
+    dragon_lord = Monster("Dragon Lord", 100, 15)
+    return dragon_lord
+
+def dragon_paper():
+    dragon_lord = Monster("Dragon Lord", 50, 15)
+    return dragon_lord
