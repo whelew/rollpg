@@ -44,6 +44,7 @@ def character_name():
             print("You can't be called nothing...")
         else:
             break
+    os.system("clear")
     return name   
 
 def select_race():
@@ -68,6 +69,7 @@ def select_race():
             break
         else:
             print("I've not heard of that race before.. please select one from the list.\n")
+    os.system("clear")        
     return race
 
 def combat(enemy, hero):
@@ -83,7 +85,7 @@ def combat(enemy, hero):
     h_attack = getattr(hero, "attack")
 
     while h_health > 0 or e_health > 0:
-        # os.system("clear")
+        os.system("clear")
         print(f"Hero: Health:{h_health} Attack:{h_attack}")
         print(f"{e_name}: Health:{e_health} Attack:{e_attack}")
         print("1 to attack or 2 to flee")
@@ -198,7 +200,7 @@ def forest_middle(hero):
             print("Please enter 1 or 2:")
 
 def start_quest(hero):
-    print("Let your journey begin.")
+    print("It is time to begin your quest!\n")
     print("There has been a lot of disturbances from a nearby Dungeon in the Forest.")
     print("The Goblins and BugBears that take residence there have started to flee the cave.")
     print("They used to be no problem but something is driving them out.")
@@ -208,10 +210,12 @@ def start_quest(hero):
         print("Head towards the Forest (1) or go to the Tavern (2)")
         choice = input("Enter 1 or 2:\n")
         if choice == "1":
+            os.system("clear")
             print("You enter the Forest.\n")
             enter_forest(hero)
             break
         if choice == "2":
+            os.system("clear")
             print("You enter the Tavern")
             break
         else:
