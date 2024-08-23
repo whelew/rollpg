@@ -252,6 +252,8 @@ def handle_event(r_item):
     If instance of item is returned from event.
     Item will be added to global inventory.
     """
+    print("It seems like you're almost at the cave!")
+    print("You carry on walking until..\n")
     try:
         item = event.random_event()
         if item:
@@ -280,6 +282,32 @@ def t_stone_event(hero):
     else:
         pass
 
+def cave():
+    print("You find yourself at the entrance of the cave.\n")
+    value =inventory.is_item_in_inventory("Map")
+    if value == True:
+        print("You remember you have a map of the caves layout.")
+        print("You take the map out and examine it.")
+        print("It seems like there is a path scribbled on it.")
+        print("You imagine it will take you to the source of the problem.")
+        decision = True
+    else:
+        print("You enter the cave unsure of where to go next.")
+        print("Do you want to head (1) into the darkness or (2) turn back?")
+        choice = input("Enter 1 or 2:")
+        while True:
+            if choice == "1":
+                os.system("clear")
+                ("You enter the cave..\n")
+                decision = False
+            else:
+                os.system("clear")
+                print("There's no point turning back.")
+                print("You've come this far.")
+                print("You need to finish the quest.")
+                print("You enter the cave.\n")
+                decision = False
+    return decision
 def main():
 
     c_name = character_name()
@@ -291,6 +319,7 @@ def main():
     forest_middle(hero)
     handle_event(inventory)
     t_stone_event(hero)
+    cave()
     
 
 main()
