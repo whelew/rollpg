@@ -1,5 +1,6 @@
 import random
 import item
+import os
 
 def stranger():
     """Find a straner, make a choice to rob him, save him or kill him."""
@@ -8,12 +9,14 @@ def stranger():
     choice = input("please enter 1, 2 or 3:\n")
     while True:
         if choice == "1":
+            os.system("clear")
             print("You decide to help the stranger.")
             print("You are able to use some medicine on their wound.")
             print("They follow the path back to the town.\n")
             new_item = item.Item("Gold Ring", "A golden ring, it looks well worn.")
             return new_item
         elif choice == "2":
+            os.system("clear")
             print("You steal the poor strangers belongings.")
             print("Among his rations and belongings you find a gold ring.")
             print("You imagine the poor stranger won't last very long come night fall.")
@@ -21,6 +24,7 @@ def stranger():
             new_item = item.Item("Gold Ring", "A golden ring, it looks well worn.")
             return new_item
         elif choice == "3":
+            os.system("clear")
             print("You decide to put them out of their misery.")
             print("You take out your weapon and stop their sufferring.")
             print("You take a moment to make a grave for them and give them a burial.")
@@ -35,10 +39,11 @@ def begger():
     choice = input("please enter 1 to spare a coin, 2 to walk by:\n")
     while True:
         if choice == "1":
+            os.system("clear")
             outcome = [
-                ("The begger thanks you, you gain 2 charisma."), 
-                ("The begger gives you a piece of parchment."),
-                ("The begger spits at you, 'a single coin.. cheapskate.'"),
+                ("The begger thanks you, you gain 2 charisma.\n"), 
+                ("The begger gives you a piece of parchment.\n"),
+                ("The begger spits at you, 'a single coin.. cheapskate.'\n"),
                 ("""The begger transforms right in front of your eyes
                 from a decrepid old man, back to a youthful man. He cries out, thank
                 you! You have freed me from the curse that old hag put on me.\n""")]
@@ -50,6 +55,7 @@ def begger():
             print(random_outcome)
             break
         elif choice == "2":
+            os.system("clear")
             print("I can't believe you would walk past a dying old man.")
             print("Lose 1000 karma.") #reference to the video game Fallout
             print("The begger curses you, you can only turn left.\n")
@@ -61,17 +67,19 @@ def begger():
 def time_loop():
     print("A portal appears in front of you.")
     print("Would you like to approach and interact with the portal?")
-    choice = input("please enter 1 for yes, 2 for no")
+    choice = input("please enter 1 for yes, 2 for no:\n")
     while True:
         if choice == "1":
+            os.system("clear")
             print("You slowly approach the portal.")
             print("A hand reaches out and pulls you through it.")
             print("Everything goes black.")
             print("After a few seconds you find yourself stood in the same spot.")
-            print("Only the portal has gone and you are holding something.")
+            print("Only the portal has gone and you are holding something.\n")
             time_stone = item.Item("Time Stone", "What does it do?")
             return time_stone
         elif choice == "2":
+            os.system("clear")
             print("You decide that you will leave it.")
             print("Messing around with random portals can never be good.")
             print("Right...?\n")

@@ -84,26 +84,31 @@ def combat(enemy, hero):
     e_attack = getattr(enemy, "attack")
     h_attack = getattr(hero, "attack")
 
+    print(f"You charge at the {e_name} unleashing a mighty battle chant!\n")
+
     while h_health > 0 or e_health > 0:
-        os.system("clear")
         print(f"Hero: Health:{h_health} Attack:{h_attack}")
-        print(f"{e_name}: Health:{e_health} Attack:{e_attack}")
+        print(f"{e_name}: Health:{e_health} Attack:{e_attack}\n")
         print("1 to attack or 2 to flee")
         choice = input("enter 1 or 2:\n")
         if choice == "1":
+            os.system("clear")
             e_damage = randint(1, e_attack)
             h_damage = randint(1, h_attack)
             e_health = e_health - h_damage 
             h_health = h_health - e_damage
             print(f'The {e_name} dealt {e_damage}. You dealt {h_damage}.\n')
             if e_health <= 0:
-                print(f"You successfully killed the {e_name}!")
+                os.system("clear")
+                print(f"You successfully killed the {e_name}!\n")
                 hero.hp = h_health
                 break
             if h_health <= 0:
+                os.system("clear")
                 print("You died.")
                 break        
         elif choice == "2":
+            os.system("clear")
             print("You flee from combat")
             break
         else:
@@ -119,10 +124,12 @@ def start_encounter(hero):
     while True:
         reaction = input("Please type 1 for yes or 2 for no:\n")
         if reaction == "1":
+            os.system("clear")
             combat(level_one, hero)
             break
         elif reaction == "2":
-            print("try to flee")
+            os.system("clear")
+            print("You flee from the encounter.")
             break
         else:
             print("Please input 1 or 2")
@@ -134,14 +141,17 @@ def wishing_well(hero):
         if choice == "1":
             chance = randint(1, 2)
             if chance == 1:
+                os.system("clear")
                 print("You throw the coin and hear it hit something at the bottom of the well.\n")
                 new_item = item.well_item()
                 acquire_weapon(hero, new_item)
                 break
             else:
+                os.system("clear")
                 print("You throw a coin down a well.. nothing happens\n")
                 break
         if choice == "2":
+            os.system("clear")
             goblin = monster.goblin_encounter()
             print("You walk away and get attacked by a goblin.\n")
             combat(goblin, hero)
@@ -150,7 +160,8 @@ def wishing_well(hero):
             print("Make a choice, 1 or 2.")      
 
 def enter_forest(hero):
-    print("You enter the forest. You follow a stone path that leads deep into the forest.")
+    os.system("clear")
+    print("You follow a stone path that leads deep into the forest.")
     choice = randint(1, 3)
     if choice == 1:
         wishing_well(hero)
@@ -163,7 +174,7 @@ def enter_forest(hero):
                 bug_bear = monster.bugbear()
                 combat(bug_bear, hero)
                 print("You open the chest and find.. a key.")
-                key = Item("Key", "A rusty old key, I wonder what it opens...")
+                key = Item("Key", "A rusty old key, I wonder what it opens...\n")
                 inventory.add_item(key)
                 inventory.display_inventory()
                 break
@@ -173,7 +184,8 @@ def enter_forest(hero):
             else:
                 print("Please enter 1 or 2.\n")
     else:
-        print("You keep walking")
+        os.system("clear")
+        print("Your journey goes smoothly and nothing out of the ordinary occurs.\n")
 
 def forest_middle(hero):
     print("You carry on down the path. You hear a sound coming from behind a rock.")
@@ -183,10 +195,11 @@ def forest_middle(hero):
         if choice == "1":
             chance = randint(1, 2)
             if chance == 1:
+                os.system("clear")
                 print("You see a creature eating a human for lunch.")
-                print("It sees you looking its way.")
+                print("It sees you looking its way.\n")
                 start_encounter(hero)
-                print("It looks like the creaute was trying to hide an item.")
+                print("It looks like the creaute was trying to hide an item.\n")
                 map = Item("Map", "A map of the dungeon, this might come in handy...")
                 inventory.add_item(map)
                 inventory.display_inventory()
@@ -194,7 +207,8 @@ def forest_middle(hero):
             else:
                 pass
         elif choice == "2":
-            print("You carry on walking down the path.")
+            os.system("clear")
+            print("You carry on walking down the path.\n")
             break
         else:
             print("Please enter 1 or 2:")

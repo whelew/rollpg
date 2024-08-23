@@ -48,9 +48,9 @@ class Inventory:
             print("Iventory is empty")
         else:
             print("An item has been added to your inventory.")
-            print("Inventory:")
+            print("Inventory:\n")
             for item in self.items:
-                print(f"{item.item_info()}")
+                print(f"{item.item_info()}\n")
 
     def is_item_in_inventory(self, item_name):
         """Checks if an item is in the inventory"""

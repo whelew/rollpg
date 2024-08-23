@@ -9,7 +9,7 @@ class Monster:
   
     def description(self):
         """Describe the encounter"""
-        return f"A wild {self.name} appears, what will you do?"
+        return f"The {self.name} prepares itself for combat, what will you do?\n"
 
     def stats(self):
         """Set the encounter stats"""
@@ -46,5 +46,6 @@ def goblin_encounter():
     return goblin
 
 def bugbear():
+    print("You charge at the BugBear unleashing a mighty battle chant.")
     bugbear = Monster("BugBear", 15, 3)
     return bugbear
