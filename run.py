@@ -347,20 +347,44 @@ def healing_fountain(hero)
     print("You head towards it, it looks like a water fountain.")
     print("There is an inscription written in the middle of the fountain.")
     print("It reads...\n")
-
+    #\n to help readability
     print("For those kind of heart and who seek no riches.")
     print("Drink from me and you shall be restored stronger than before.")
     print("For those who have taken from the needy.")
     print("Who have sinned and given in to the greedy.")
     print("Do not take from these waters, your fate will have no reward.\n")
-
+    #\n to help readability
     print("Do you want to drink from the fountains water?")
+    value = inventory.is_item_in_inventory("Gold Ring")
     choice = input("Enter 1 or 2:\n")
     while True:
         if choice == "1":
-            pass
+            if value == True:
+                os.system("clear")
+                print("You drink from the fountains waters.")
+                print("All of a sudden you start to lose your strength.")
+                print("You hear a voice echo through your head...")
+                print("'It seems as though you were greedy.'")
+                print("'The Gold Ring you stole earlier doesn't belong to you.'")
+                print("Your health has been set to 20.")
+                print("Good luck.. I fear that you won't survive now.\n")
+                h_health = 20
+                hero.hp = h_health
+                break
+            else:
+                os.system("clear")
+                print("You drink from the fountains waters.")
+                print("You hear a voice echo through your head...")
+                print("'You are pure of heart, let your strength return.'")
+                print("Your health has now been set too 125.")
+                print("You won't be needing luck from now on!")
+                h_health = 125
+                hero.hp = h_health
         elif choice == "2":
-            pass
+            print("You decide it is best not to drink from the water.")
+            print("You're almost at the source of the problem in the cave.")
+            print("You delve deeper.\n")
+            break
         else:
             print("Please enter 1 or 2:\n")
 
