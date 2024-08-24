@@ -193,8 +193,7 @@ def wishing_well(hero):
             print("Make a choice, 1 or 2.")      
 
 def enter_forest(hero):
-    os.system("clear")
-    print("You follow a stone path that leads deep into the forest.")
+    print("You follow a stone path that leads deep into the forest.\n")
     choice = randint(1, 3)
     if choice == 1:
         wishing_well(hero)
@@ -264,7 +263,13 @@ def start_quest(hero):
             break
         if choice == "2":
             os.system("clear")
-            print("You enter the Tavern")
+            print("You head towrads the Tavern for a drink.\n")
+            print("You enter a drinking contest.")
+            print("After downing 20 meads you almost claim victory.")
+            print("You come second and fall asleep on a table.")
+            print("You wake up several hours later with a hangover.\n")
+            print("You think it's time to head towards the Forest!\n")
+            enter_forest(hero)
             break
         else:
             print("Please enter 1 or 2.")
