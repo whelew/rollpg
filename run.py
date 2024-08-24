@@ -105,7 +105,11 @@ def combat(enemy, hero):
                 break
             if h_health <= 0:
                 os.system("clear")
-                print("You died.")
+                print("I'm sorry to say this... but you died.")
+                print("You fought hard but your quest has come to an end.")
+                print(f"{hero.name} you will be remembered.")
+                print("Hopefully a more fortunate adventurer will come along.\n")
+                print("Thanks for playing!")
                 exit()       
         elif choice == "2":
             dragon_lord = "Dragon Lord"
