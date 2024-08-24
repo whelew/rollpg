@@ -50,7 +50,6 @@ def goblin_encounter():
     return goblin
 
 def bugbear():
-    print("You charge at the BugBear unleashing a mighty battle chant.")
     bugbear = Monster("BugBear", 15, 3)
     return bugbear
 

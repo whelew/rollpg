@@ -89,8 +89,8 @@ def combat(enemy, hero):
     while h_health > 0 or e_health > 0:
         print(f"Hero: Health:{h_health} Attack:{h_attack}")
         print(f"{e_name}: Health:{e_health} Attack:{e_attack}\n")
-        print("1 to attack or 2 to flee")
-        choice = input("enter 1 or 2:\n")
+        print("1 to attack or 2 to flee!")
+        choice = input("Enter 1 or 2:\n")
         if choice == "1":
             os.system("clear")
             e_damage = randint(1, e_attack)
@@ -106,11 +106,15 @@ def combat(enemy, hero):
             if h_health <= 0:
                 os.system("clear")
                 print("You died.")
-                break        
+                exit()       
         elif choice == "2":
+            dragon_lord = "Dragon Lord"
             os.system("clear")
-            print("You flee from combat")
-            break
+            if enemy.name == dragon_lord:
+                print("You can not flee from the Dragon Lord!")
+            else:
+                print("You flee from combat")
+                break
         else:
             print("You need to make a choice, 1 or 2?")
     
@@ -413,7 +417,7 @@ def healing_fountain(hero):
 def treasure_chest(hero):
     print("You have been running through these tunnels for over an hour.")
     print("Finally you reach the center of the cave system.")
-    print("Just before the entrance you see a chest with a sign above it.")
+    print("Just before the entrance you see a chest with a sign above it.\n")
     print("The Sign Says:\n")
 
     print("Please open and use what is inside.")
@@ -435,16 +439,32 @@ def treasure_chest(hero):
                 dragon_blade = Weapon("Blade of Dragons", 20)
                 acquire_weapon(hero, dragon_blade)
             else:
+                os.system("clear")
                 print("The lock won't budge, it's sealed shut.")
-                print("If only you had the key.")
+                print("If only you had the key.\n")
             break
         elif choice == "2":
+            os.system("clear")
             print("You think the chest might be a mimic.")
-            print("Best to leave it alone.")
+            print("Best to leave it alone.\n")
             break
         else:
             print("Please enter 1 or 2:")
 
+def final_boss(hero):
+    value = inventory.is_item_in_inventory("Parchment")
+    if value == True:
+        dragon_lord = monster.dragon_paper()
+    else:
+        dragon_lord = monster.dragon_lord()
+    
+    print("You dare enter my fortress. My kingdom.")
+    print("I am the dragon lord. I go where I please.")
+    print("I will not have some tiny rat disturbing my treasures.")
+    print("You will find only death here.")
+    print("Or have you come to bargin?\n")
+    combat(dragon_lord, hero)
+    
 
 
 
@@ -462,6 +482,7 @@ def main():
     enter_cave(hero, cave)
     healing_fountain(hero)
     treasure_chest(hero)
+    final_boss(hero)
     
 
 main()
