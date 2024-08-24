@@ -45,6 +45,20 @@ def random_encounter():
             enc_mnst = Monster("Dragon", 40, 5)
     return enc_mnst
 
+def cave_monster():
+    encounter = randint(1, 3)
+    
+    match encounter:
+        case 1:
+            enc_mnst = Monster("Cave Monster", 15, 3)
+        case 2:
+            enc_mnst = Monster("Cave Monster", 20, 4)
+        case 3:
+            enc_mnst = Monster("Cave Monster", 25, 5)
+    
+    return enc_mnst
+
+
 def goblin_encounter():
     goblin = Monster("Goblin", 10, 2)
     return goblin

@@ -109,9 +109,13 @@ def combat(enemy, hero):
                 exit()       
         elif choice == "2":
             dragon_lord = "Dragon Lord"
+            cave_monster = "Cave Monster"
             os.system("clear")
             if enemy.name == dragon_lord:
-                print("You can not flee from the Dragon Lord!")
+                print("You can not flee from the Dragon Lord!\n")
+            elif enemy.name == cave_monster:
+                print("You can not flee from this combat!\n")
+                print("You have to keep fighting!\n")
             else:
                 print("You flee from combat")
                 break
@@ -139,7 +143,7 @@ def start_encounter(hero):
             print("Please input 1 or 2")
 
 def cave_encounter(hero):
-    level_one = monster.random_encounter()
+    level_one = monster.cave_monster()
     print(level_one.cave_desc())
     print(level_one.stats())
     print("Will you attack yes or no?\n")
