@@ -6,8 +6,8 @@ def stranger():
     """Find a straner, make a choice to rob him, save him or kill him."""
     print("You find an injured stranger pleading for help.")
     print("Do you (1) aid them, (2) steal their belongings, or (3) put them out of their misery?")
-    choice = input("please enter 1, 2 or 3:\n")
     while True:
+        choice = input("please enter 1, 2 or 3:\n")
         if choice == "1":
             os.system("clear")
             print("You decide to help the stranger.")
@@ -15,10 +15,11 @@ def stranger():
             print("Thank you for your help.")
             print("You see a gold ring around the neck of the stranger.")
             print("Do you demand the ring as payment for helping the stranger?")
-            print("Enter 1 for yes or 2 for no.")
-            sec_choice = input("Enter 1 or 2:\n")
+            print("Enter 1 for yes or 2 for no.\n")
             while True:
+                sec_choice = input("Enter 1 or 2:\n")
                 if sec_choice == "1":
+                    os.system("clear")
                     print("Oh you want my ring? But it's all I have left!")
                     print("You demand the gold ring off the stranger!")
                     new_item = item.Item("Gold Ring", "A golden ring, it looks well worn.")
@@ -27,13 +28,18 @@ def stranger():
                     print("Lose 50 karma.\n")
                     return new_item
                 elif sec_choice == "2":
+                    os.system("clear")
                     print("I would give you my gold ring, but it's all I have.")
                     print("I was going to sell it when I got to town.")
                     print("Thank you for your help.")
                     print("I will pay you back when you return to town!\n")
                     break
                 else:
-                    print("Please enter 1 or 2:\n")
+                    os.system("clear")
+                    print("Invalid Input.")
+                    print("Would you like to demand the Gold Ring?")
+                    print("Please enter 1 for yes or 2 for no:\n")
+            break
         elif choice == "2":
             os.system("clear")
             print("You steal the poor strangers belongings.")

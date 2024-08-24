@@ -212,6 +212,7 @@ def enter_forest(hero):
                 inventory.display_inventory()
                 break
             elif engage == "2":
+                os.system("clear")
                 print("You let the BugBear pass.")
                 break
             else:
