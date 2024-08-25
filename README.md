@@ -28,11 +28,9 @@ A Python terminal based Role Playing Game (RPG).
 
 ## [Future Features](#future-features-1)
 
-### [Interactive Inventory](#interactive-inventory-1)
-
-### [Armour](#armour-1)
-
-### [Video Game](#video-game-1)
+- [Interactive Inventory](#interactive-inventory)
+- [Armour](#armour)
+- [Video Game](#video-game)
 
 ## [Deployment](#deployment-1)
 
