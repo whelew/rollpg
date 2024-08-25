@@ -26,6 +26,8 @@ A Python terminal based Role Playing Game (RPG).
 - [Item, Inventory, Weapon](#Item-Inventory-Weapon)
 - [Event](#event)
 
+### [Combat](#the-combat-system)
+
 ## [Future Features](#future-features-1)
 
 - [Interactive Inventory](#interactive-inventory)
@@ -153,6 +155,20 @@ def function3():
 def random_event():
     result = random.choice(function1, function2, function 3)
     return result() #The () calls the function.
+
+### The Combat System
+
+The combat system starts when the combat() function is called. It takes hero and enemy as arguments. The operations work as follows:
+
+1. The enemy's name, health and attack are aquired from the Monster class, alongside the Hero health and attack being aquired from the Hero class.
+2. The Hero and enemy stats are printed at the top to show the player the current health and attack power.
+3. The player is then asked if they would like to (1) attack or (2) flee. During some encounters fleeing will not be an option and the player will be forced to attack.
+4. Each time the player attacks, the damage will be rolled randomly between 1 and their current attack damage, the same also applies for the enemy. This gives it the D&D style game play where you would have a dice relating to your weapon, for example a d12 and you can get any number between 1 and 12.
+5. After the hero attacks and the damage is calculated, the system will be cleared and printed out again.
+6. A new message above will be printed first letting the player know how much damage they did and the enemy did to them followed by the stats of the hero and enemy.
+7. Whenever the player drops to 0 or below a message will be printed letting the user know they have died. The game will also use the exit() to terminate the game and stop the game from continuing with future functions.
+8. The same goes for the enemy, if the enemy health drops to 0 or below the combat loop will break, a message saying the enemy has died will be printed and the next function will initiate.
+9. The loop will continue to run until either the user dies, the enemy dies, or in the cases where the user can flee, they flee from combat.
 
 ### Future Features
 

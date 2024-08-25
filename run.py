@@ -141,7 +141,7 @@ def start_encounter(hero):
             break
         elif reaction == "2":
             os.system("clear")
-            print("You flee from the encounter.")
+            print("You flee from the encounter.\n")
             break
         else:
             print("Please input 1 or 2")
