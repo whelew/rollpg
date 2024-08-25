@@ -63,6 +63,14 @@ def stranger():
 
 
 def begger():
+    """
+    User selects option 1 or 2.
+    If option 1.
+    random.choice is used to select specific outcome.
+    If option 2.
+    Predefined response printed.
+    Else user is prompted to input correct input.
+    """
     print("You stumble across a helpless begger..")
     print('"Please Sir, Spare a coin?')
     choice = input("please enter 1 to spare a coin, 2 to walk by:\n")
@@ -96,6 +104,14 @@ def begger():
 
 
 def time_loop():
+    """
+    User is given option 1 or 2.
+    If option 1.
+    Print text and return instance of item.
+    If option 2.
+    Print text and break while loop.
+    Else user is prompted to input correct input. 
+    """
     print("A portal appears in front of you.")
     print("Would you like to approach and interact with the portal?")
     choice = input("please enter 1 for yes, 2 for no:\n")

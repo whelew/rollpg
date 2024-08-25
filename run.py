@@ -133,6 +133,14 @@ def combat(enemy, hero):
 
 
 def start_encounter(hero):
+    """
+    Creates instance of monster.
+    prints desciption of monster and stats of monster.
+    User is given option 1 or 2.
+    If option 1 combat begins.
+    If option 2 no combat begins.
+    Else user asked to input either 1 or 2.
+    """
     level_one = monster.random_encounter()
     print(level_one.description())
     print(level_one.stats())
@@ -155,6 +163,13 @@ def start_encounter(hero):
 
 
 def cave_encounter(hero):
+    """
+    Similar to start_encounter.
+    User is unable to flee from this combat.
+    Option 1 starts combat.
+    Option 2 will not let player flee from combat.
+    Else user is prompted to input 1 or 2.
+    """
     level_one = monster.cave_monster()
     print(level_one.cave_desc())
     print(level_one.stats())
@@ -177,6 +192,13 @@ def cave_encounter(hero):
 
 
 def wishing_well(hero):
+    """
+    User is given option 1 or 2.
+    If option 1, user throws a coin.
+    randint gives 50% to return an item. 50% to return no item.
+    Option 2, no coin is thrown, a combat begins instead.
+    Else user asked to input either 1 or 2.
+    """
     print("You stumble upon a wishing well. Would you like to throw a coin?")
     while True:
         choice = input("Enter 1 to throw a coin, 2 to walkaway:\n")
@@ -204,6 +226,13 @@ def wishing_well(hero):
 
 
 def enter_forest(hero):
+    """
+    Uses randint to generate a random chance event.
+    Option 1 wishing_well function called.
+    Option 2 combat with Bug Bear followed by
+    Create instance of item Key, aquire item.
+    Option 3 Nothing Happens.
+    """
     print("You follow a stone path that leads deep into the forest.\n")
     choice = randint(1, 3)
     if choice == 1:
@@ -234,6 +263,17 @@ def enter_forest(hero):
 
 
 def forest_middle(hero):
+    """
+    User asked to input 1 or 2.
+    If option 1.
+    Start combat with random enemy.
+    If combat returns as True create instance of Item.
+    Aquire Item.
+    Else no combat.
+    If Option 2
+    No combat, next function is called.
+    Else user asked to input correct input.
+    """
     print("You carry on down the path.\n"
           "You hear a sound coming from behind a rock.")
     print("Would you like to check out the noise?")
@@ -267,6 +307,12 @@ def forest_middle(hero):
 
 
 def start_quest(hero):
+    """
+    Beginning text after character creation.
+    User given option 1 or 2.
+    If 1, call enter_forest().
+    If 2, print Tavern text followed by call enter_forest().
+    """
     print("It is time to begin your quest!\n")
     print("There have been a lot of disturbances from a nearby Dungeon.")
     print("Goblins and BugBears have started to flee the cave.")
@@ -380,6 +426,7 @@ def check_for_map():
 
 
 def cave_system(hero):
+    """Creates a series of combat encounters"""
     print("A horde of monsters are running your way.")
     print("It looks like they are running away from something.")
     print("You are able to get by for the most part unnoticed.")
@@ -409,7 +456,16 @@ def enter_cave(hero, map):
 
 
 def healing_fountain(hero):
-    """"""
+    """
+    Function text is printed. Checks invetory for item Gold Ring.
+    If Gold Ring is inventory, value = True.
+    User is given option 1 or 2.
+    If option 1.
+    If value = True, set hero.hp to 20.
+    Else set hero.hp 125
+    If option 2.
+    User hp does not change.
+    """
     print("Congratulations, you managed to survive the cave system!")
     print("Fortunately for you a mystical light appears ahead of you.")
     print("You head towards it, it looks like a water fountain.")
@@ -567,6 +623,10 @@ def win_game(character_name):
 
 
 def main():
+    """
+    The main function call.
+    Starts the game and calls every other function.
+    """
     c_name = character_name()
     print(f'Yes... {c_name}, a very heroic name!\n')
     hero = select_race()

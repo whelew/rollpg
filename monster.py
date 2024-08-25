@@ -35,6 +35,11 @@ def random_encounter():
 
 
 def cave_monster():
+    """
+    Creates instance of Monster for cave encounter.
+    Uses randint to select a choice of 1, 2 or 3.
+    Monster instance will be created depending on choice.
+    """
     encounter = randint(1, 3)
 
     match encounter:
@@ -49,20 +54,24 @@ def cave_monster():
 
 
 def goblin_encounter():
+    """Creates instance of Goblin"""
     goblin = Monster("Goblin", 10, 2)
     return goblin
 
 
 def bugbear():
+    """Creates instance of Bug Bear"""
     bugbear = Monster("Bug Bear", 15, 3)
     return bugbear
 
 
 def dragon_lord():
+    """Creates Instance of Dragon Lord"""
     dragon_lord = Monster("Dragon Lord", 100, 15)
     return dragon_lord
 
 
 def dragon_paper():
+    """Creates Instance of Dragon Lord Weakened"""
     dragon_lord = Monster("Dragon Lord", 50, 15)
     return dragon_lord
