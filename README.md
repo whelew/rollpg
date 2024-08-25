@@ -36,6 +36,7 @@ A Python terminal based Role Playing Game (RPG).
 
 ## [Testing](#testing-1)
 
+- [Bugs and Debugging](#bugs-and-debugging)
 - [PEP8 Validaiton](#pep8---validator)
 
 ## [Deployment](#deployment-1)
@@ -208,6 +209,35 @@ return new_damage #return 3 instead of 5
 - I would most likely start by using [PYGame](https://github.com/pygame/pygame) which is a free and open-source cross platform library used in the development of multimedia applications like video games using Python.
 
 ### Testing
+
+#### Bugs and Debugging
+
+- During the course of development a few bugs did occur.
+- Many of these have now been resolved.
+
+**Combat Fleeing**
+- The combat system that I created always gave the option of either 1 attacking the enemy or 2 fleeing the combat.
+- The main issue that occured was during events where after combat had been called an instance of the Item class would be returned. However the game should only let you get the item by defeating the enemy. 
+- I was quickly able to resolve this by adding a return True or False feature to the combat. If during combat the user would flee, the combat call would be returned as False. I was then able to use an if x is True statement to reward the user with the item else the user did not get the item.
+- There was also an issue where the user could flee the cave_encounter and the final_boss encounter, during which the player should not be allowed to flee. To resolve this issue, I created if, elif, else statement targetting the Monster classes name. If the name was either, "Dragon Lord", "Dragon Paper", "Cave Monster" or "Bug Bear", the user would not be allowed to flee and forced to complete the combat, even if it resulted in death.
+
+**The well_item Function**
+- Originally this function would have a 75% chance to return an instance of weapon and a 25% chance to return None. Due to the way I set up the function call in the run.py file whenever the 25% chance of return None was called it would cause a error saying the object has no attribute called "None".
+- This was a simple fix, I removed the 25% choice as the well_item function itself was a chance call anyway so what I wanted to happen was already happening in the function well_item was being called in.
+
+**Character Name Function**
+- At the beginning of the game the user is asked what they would like to call their character. 
+- I immediately ran into issues as I realised the player could name themselves nothing e.g. "". They could have their name purely as numbers, or a mixture of letters and numbers. 
+- I have not fully resolved this issue, I was able to somewhat damage control it by using and if "any(n.isdigit() for n in name)", "elif name.isspace() is True:", "elif name == "":" else statement.
+- Using this method meant the user could not create a name using blank space, nothing at all or have any number in the name. 
+- The issue is, the user could still call themselves a single letter such as L or X, and if the user wanted a name with two words such as "Super Mario" because this name has a blank space in between the two words, it would be picked up by my elif statement.
+- This is a very minor issue.
+
+**Scope**
+- Scope was a difficult issue to deal with, especially when importing seperate modules that create instances of a class.
+- The inventory I called globally near to the top of the run.py file as this would allow me to use it globally in my functions below. This proved to be a useful and quick fix.
+- I had thought about doing the same with the Hero class and the character name. Setting up the Hero class globally would be useful because a lot of my functions use hero as an argument in the main() function, and it might get confusing if another developer was working on this game.
+- It was a fun challenge working around this, for example the combat system could have been a lot easier if I set up the monster and hero class instances globally. But i was able to figure out an appropriate method that performed the way I wanted it to perform.
 
 #### PEP8 - Validator
 

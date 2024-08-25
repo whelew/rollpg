@@ -27,7 +27,7 @@ def random_encounter():
     Creates instance of Monster from a random selection of names and integers
     """
     m_name = ["Goblin", "Orge", "Skeleton", "Centaur", "Imp", "BugBear"]
-    m_health = [5, 8, 10, 12, 15, 17, 18, 20]
+    m_health = [10, 12, 15, 17, 18, 20, 25]
     m_attack = [1, 2, 3, 4, 5]
 
     enc_mnst = Monster(choice(m_name), choice(m_health), choice(m_attack))
