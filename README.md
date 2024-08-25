@@ -1,6 +1,6 @@
 # **RollPG - A Command Line Role Playing Game**
 
-A Python terminal based Role Playing Game (RPG).
+A Python terminal based Role Playing Game (RPG). Using random events and a D&D style based dice rolling system for combat.
 
 # Table of Contents
 
@@ -57,6 +57,7 @@ A Python terminal based Role Playing Game (RPG).
 - The most common option you will be given is, enter 1 or 2:
 - On some occassions you will be given 1, 2 or 3:
 - If you try to input anything else other than 1, 2 or 3, the terminal will print a message asking you to enter either 1 or 2.
+- All combat damage rolls are based off D&D dice rolls. If your attack is 6, your damage will be between 1 and 6. If your damage is 10, your damage will be between 1 and 10.
 
 ### Objective
 
