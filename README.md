@@ -25,6 +25,13 @@ A Python terminal based Role Playing Game (RPG).
 - [Item, Inventory, Weapon](#Item-Inventory-Weapon)
 - [event](#event)
 
+## [Future Features](#future-features-1)
+
+## [Deployment](#deployment-1)
+
+- [Deploying to Heroku](#deploying-to-heroku)
+- [Cloning](#cloning)
+
 ### How to Play
 
 - Throughout the game you will be asked to input data.
@@ -69,9 +76,9 @@ I used random specifically for its randInt function which would let me generate 
 
 Three main uses for random:
 
-1 Random event generating, when the user selects a choice in the game. Depending on the scenario, randInt would select one option of three. For example, It might be the case nothing happens, an enemy attacks you or you find a special item.
-2 The combat system, using the Hero and Monster class attack attribute, I could put the attack attribute value into the randInt(1, n) function. For example, damage = randInt(1, hero.attack). This would allow the damage to be randomly rolled between 1 and the users attack value. This worked well as when the user aquired a new weapon that would change the users attack value, the variable included in damage = randInt(1, hero.attack) would automatically know to use the new value.
-3 Using random.choice to select a specific function inside the event module which I will describe below.
+1. Random event generating, when the user selects a choice in the game. Depending on the scenario, randInt would select one option of three. For example, It might be the case nothing happens, an enemy attacks you or you find a special item.
+2. The combat system, using the Hero and Monster class attack attribute, I could put the attack attribute value into the randInt(1, n) function. For example, damage = randInt(1, hero.attack). This would allow the damage to be randomly rolled between 1 and the users attack value. This worked well as when the user aquired a new weapon that would change the users attack value, the variable included in damage = randInt(1, hero.attack) would automatically know to use the new value.
+3. Using random.choice to select a specific function inside the event module which I will describe below.
 
 #### Custom Modules Imports
 
@@ -83,9 +90,9 @@ A lot of the features I wanted to include the game would have taken up a lot of 
 - Includes a random_encounter function that uses randInt to select from a list of 10 different instances of Monster.
 - Future Implementation, use random.choice on 3 seperate lists.
 
-1 List of Names
-2 List of integers for health
-3 List of integers for attack
+1. List of Names
+2. List of integers for health
+3. List of integers for attack
 
 - Add these new values to one instance of Monster and return this instead. It would be a lot cleaner to read if done this way and also increases randomness, you would have one instance of goblin that would be very strong and another time it would be very weak.
 - UPDATED: encounter_monster function now uses random.choice to select from a list of names and integers to return an instance of Monster. This has greatly reduced the length of the code and improved readability.  
@@ -129,3 +136,43 @@ def function3():
 def random_event():
     result = random.choice(function1, function2, function 3)
     return result() #the () calls the function.
+
+### Future Features
+
+
+### Deployment
+
+To be able to share my working project for the assessment, I used the Code Institute python template which included most of the files that would be needed to get it working in a mock terminal. I deployed my project to [Heroku](https://dashboard.heroku.com/)
+
+#### Deploying to Heroku
+
+Before deploying you need to ensure your workspace is ready to deploy.
+
+1. If you have any inputs please ensure that they all have a new line feature (\n) as without it there maybe issues when the project is deployed.
+2. You need to create your list of requirements that our project needs to run. If you have used the Code Institute Template you will have a file titled reqiurements.txt, if you do not then please create one in your project.
+3. In the command line, you must input: "pip3 freeze > requirements.txt", after doing this it will add a list of dependencies to your requirements.txt file, note: it is case sensitive so please ensure everything is spelt correctly. Make sure to commit this and push it to github.
+4.  Now please follow the link above to Heroku and sign in, if you don't have an account please sign up and create one.
+5. Once you have done this, on the Heroku dashboard you will need to click "Create New App", name the app an appropriate name and set it to your local region, my local region was Europe.
+6. Once this is done you will need to click settings, inside settings you will need to add a new config vars (Enviroment Variables). This is where you would store sensitive data.
+7. Inside Key please type "PORT" and inside Value please type "8000". You need to do this or your deployment may fail.
+8. (Optional) If you have a creds.json file, you will need to do this. If you are not connecting to an API you will not need to do this. Set the Key to CREDS and inside the Value add all of your creds.json file code.
+9. You now need to add your buildpacks, click the "Add Buildpack" button and add Python and nodejs. Make sure that Python is above nodejs in the list.
+10. Now click the Deploy tab, for deployment method please select GitHub.
+11. Search for your GitHub repository name. My repository name was rollpg, so I typed this and located my project.
+12. (Optional)You can choose to enable automatic deploys, I would recommend doing this as whilst you are working on your project when you push your project it will automatically update your Heroku deployment.
+13. Underneath there is a manual deploy option, click the "Deploy Brach" button, please click this so you can see the deployment logs as the app is built. Note: There was an issue with one of my dependencies that stopped my app from being deployed, seeing the logs let me see which dependencie it was and remove it.
+14. Once you have clicked the "Deploy Branch" button and it has completed deploying you will have a message saying the app was deployed successfully and a button underneath that will take you to your deployed project.
+15. You have now completed your deployment.  
+
+
+#### Cloning
+
+- Instructions to clone: 
+
+1. Follow Link: https://github.com/whelew/rollpg.git.
+2. Click on the green code button. 
+3. Copy the HTTPS URL or Github CLI link. 
+4. Open Git Bash. 
+5. Change your current working directory to the location where you want the clone directory.
+6. Type git clone, followed by the URL you copied. 
+7. Press enter to create your local clone.
