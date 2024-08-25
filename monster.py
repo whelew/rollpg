@@ -20,35 +20,11 @@ class Monster:
         """Set the encounter stats"""
         return f"{self.name} Health:{self.hp} Attack:{self.attack}"
 
-"""
-def random_encounter():
-    encounter = randint(1, 8)
-
-    match encounter:
-        case 1:
-            enc_mnst = Monster("Goblin", 10, 2)
-        case 2:
-            enc_mnst = Monster("Wolf", 12, 2)
-        case 3:
-            enc_mnst = Monster("Orge", 20, 4)
-        case 4:
-            enc_mnst = Monster("Skeleton", 10, 3)
-        case 5:
-            enc_mnst = Monster("BugBear", 15, 3)
-        case 6:
-            enc_mnst = Monster("Centaur", 20, 3)
-        case 7:
-            enc_mnst = Monster("Cockatrice", 20, 4)
-        case 8:
-            enc_mnst = Monster("Imp", 5, 5)
-    return enc_mnst
-"""
-
 def random_encounter():
     """Creates instance of Monster from a random selection of names and integers"""
     m_name = ["Goblin", "Orge", "Skeleton", "Centaur", "Imp", "BugBear"]
     m_health = [5, 8, 10, 12, 15, 17, 18, 20]
-    m_attack = [1, 2, 3, 4,]
+    m_attack = [1, 2, 3, 4, 5]
 
     enc_mnst = Monster(choice(m_name), choice(m_health), choice(m_attack))
     return enc_mnst

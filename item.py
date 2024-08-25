@@ -60,6 +60,7 @@ class Inventory:
         return False
   
 def well_item():
+    """Randomly generates an instance of Weapon and returns it."""
     choice = randint(1, 3)
     if choice == 1:
         weapon = Weapon("Great Sword", 9)
