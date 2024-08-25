@@ -15,15 +15,15 @@ A Python terminal based Role Playing Game (RPG).
 
 ### [Import List](#imports)
 
-- [os](#os)
-- [random](#random)
+- [OS](#os)
+- [Random](#random)
 
 ### [Custom Modules Imports](#custom-modules-imports-1)
 
-- [monster](#monster)
-- [item](#item)
+- [Monster](#monster)
+- [Item](#item)
 - [Item, Inventory, Weapon](#Item-Inventory-Weapon)
-- [event](#event)
+- [Event](#event)
 
 ## [Future Features](#future-features-1)
 
@@ -64,13 +64,13 @@ The main objective of this project was to create a command line based Role Playi
 
 A list of the imports I used for my python script.
 
-###### os
+##### os
 
 This handles system-level operations. The main purpose of importing os was for the os.system("clear") function. Because this game is a text based RPG there is a lot of text to print. This would quickly make the command line very messy. Therefore using system("clear") I would be able to clear the previous message and insert the next step of the game. This worked very effectivly for the combat, the combat system prints out your health and attack everytime, by clearing the previous message it now looks like the health is being updated as you fight the enemy.
 
 However this did cause some issues, as I had to look back through all my functions and make sure when a function without an input is run, because it will lead onto the next function instantly. I had to make sure the text that was meant to print was not instantly getting cleared. There are still a couple of instances where this occuring so I will aim to fix this quickly.
 
-###### random
+##### random
 
 I used random specifically for its randInt function which would let me generate a random integer from 1 to n. n being any number I wish. 
 
@@ -84,7 +84,7 @@ Three main uses for random:
 
 A lot of the features I wanted to include the game would have taken up a lot of space in the run.py file, therefore creating new custom modules I could then import into the run.py file seemed more appropriate. This did cause a few scope issues that is why the invetory is called globally so it can be accessed at any point during the game.
 
-###### monster
+##### monster
 
 - Creates an Instance of Monster with the attributes(name, hp, attack)
 - Includes a random_encounter function that uses randInt to select from a list of 10 different instances of Monster.
@@ -97,7 +97,7 @@ A lot of the features I wanted to include the game would have taken up a lot of 
 - Add these new values to one instance of Monster and return this instead. It would be a lot cleaner to read if done this way and also increases randomness, you would have one instance of goblin that would be very strong and another time it would be very weak.
 - UPDATED: encounter_monster function now uses random.choice to select from a list of names and integers to return an instance of Monster. This has greatly reduced the length of the code and improved readability.  
 
-###### item
+##### item
 
 - Defines classes Weapon, Item and Inventory.
 - Includes two seperate functions that return instances of Weapon.
@@ -108,7 +108,7 @@ The Item class is used to return an instance of Item which can then be added ins
 
 There is also a function inside Item that allows me to check if the player has the item in their inventory, if they do, the function will return True else it returns False. This was a useful feature to add as it allowed me to use the items in the game and manipulate the events of the game depending on what items you have aquired.
 
-###### Item-Inventory-Weapon
+##### Item-Inventory-Weapon
 
 I used from item import Item, Inventory, Weapon to allow the readability of the run.py to be cleaner. In some cases I found myself having to create an instance of these classes inside the run.py file and instead of writing item.Item(#attributes) or item.Weapon(#attributes) I was able to just write:
 
@@ -117,7 +117,7 @@ I used from item import Item, Inventory, Weapon to allow the readability of the 
 
 This was pruposefully to keep the code tidier for user readability.
 
-###### event
+##### event
 
 The event module has currently 3 main functions defined inside of it. These act as in game events. The purpose of this module was to create a random event, which would change on each play through. This is decided by using random.choice.
 
