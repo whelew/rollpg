@@ -1,4 +1,5 @@
 from random import randint
+from random import choice
 
 class Monster:
     """ Creates an instance of Monster """
@@ -19,8 +20,9 @@ class Monster:
         """Set the encounter stats"""
         return f"{self.name} Health:{self.hp} Attack:{self.attack}"
 
+"""
 def random_encounter():
-    encounter = randint(1, 10)
+    encounter = randint(1, 8)
 
     match encounter:
         case 1:
@@ -39,11 +41,18 @@ def random_encounter():
             enc_mnst = Monster("Cockatrice", 20, 4)
         case 8:
             enc_mnst = Monster("Imp", 5, 5)
-        case 9:
-            enc_mnst = Monster("Stone Giant", 40, 4)
-        case 10:
-            enc_mnst = Monster("Dragon", 40, 5)
     return enc_mnst
+"""
+
+def random_encounter():
+    """Creates instance of Monster from a random selection of names and integers"""
+    m_name = ["Goblin", "Orge", "Skeleton", "Centaur", "Imp", "BugBear"]
+    m_health = [5, 8, 10, 12, 15, 17, 18, 20]
+    m_attack = [1, 2, 3, 4,]
+
+    enc_mnst = Monster(choice(m_name), choice(m_health), choice(m_attack))
+    return enc_mnst
+
 
 def cave_monster():
     encounter = randint(1, 3)
