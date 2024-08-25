@@ -170,6 +170,8 @@ The combat system starts when the combat() function is called. It takes hero and
 8. The same goes for the enemy, if the enemy health drops to 0 or below the combat loop will break, a message saying the enemy has died will be printed and the next function will initiate.
 9. The loop will continue to run until either the user dies, the enemy dies, or in the cases where the user can flee, they flee from combat.
 
+UPDATE: Fixed Bug. Combat now returns True if you kill the enemy or False if you decide to flee. When fleeing you were able to aquire items, now return the function returns False so it can be used in and if True else false statement to decide if you get the item.
+
 ### Future Features
 
 #### Interactive Inventory

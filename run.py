@@ -371,6 +371,7 @@ def cave_system(hero):
     print("You are able to get by for the most part unnoticed.")
     print("However a few spot you and decide to attack you.")
     print("Prepare yourself for the onslaught.")
+    print("You won't be able to escape this encounter.\n")
     encounters = [cave_encounter, cave_encounter, cave_encounter]
     for encounter in encounters:
         encounter(hero)
@@ -476,6 +477,22 @@ def treasure_chest(hero):
         else:
             print("Please enter 1 or 2:")
 
+def rest():
+    """
+    Gives user decision to rest before fighting final boss.
+    Helps break up other function progress.
+    """
+    print("")
+    take_rest = input("Take a rest, (1) yes or (2) no?\n")
+    if take_rest == "1":
+        ("You take a short rest and prepare yourself.\n")
+    else:
+        pass
+    print("You slowly enter the final cavern.")
+    print("You see a room filled with gold and jewels.")
+    print("On top of the great pile of riches lies a Dragon.")
+    print("He instantly senses you.\n")
+
 def final_boss(hero):
     value = inventory.is_item_in_inventory("Parchment")
     if value == True:
@@ -505,6 +522,7 @@ def main():
     enter_cave(hero, cave)
     healing_fountain(hero)
     treasure_chest(hero)
+    rest()
     final_boss(hero)
     
 
