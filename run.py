@@ -479,8 +479,6 @@ def final_boss(hero):
     combat(dragon_lord, hero)
     
 
-
-
 def main():
     c_name = character_name()
     print(f'Yes... {c_name}, a very heroic name!\n')

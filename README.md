@@ -1,32 +1,27 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# **RollPG - A Command Line Role Playing Game**
 
-Welcome,
+A Python terminal based Role Playing Game (RPG).
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **May 14, 2024**
+# Table of Contents
 
-## Reminders
 
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
+## [How to Play](#how-to-play-1)
+## [Objective](#objective-1)
+## [Design](#design-1)
 
-## Creating the Heroku app
+### How to Play
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+- Throughout the game you will be asked to input data.
+- You will need to type the input into the terminal and submit the data by hitting enter on your keyboard.
+- You start the game by giving your character a name.
+- The most common option you will be given is, enter 1 or 2:
+- On some occassions you will be given 1, 2 or 3:
+- If you try to input anything else other than 1, 2 or 3, the terminal will print a message asking you to enter either 1 or 2.
 
-1. `heroku/python`
-2. `heroku/nodejs`
+### Objective
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+The main objective of this project was to create a command line based Role Playing Game in the style of Dungeons and Dragons.
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+#### 
 
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
----
-
-Happy coding!
+### Design
