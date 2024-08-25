@@ -226,6 +226,7 @@ def wishing_well(hero):
             combat(goblin, hero)
             break
         else:
+            os.system("clear")
             print("Make a choice, 1 or 2.")
 
 
