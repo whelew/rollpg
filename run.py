@@ -68,7 +68,7 @@ def select_race():
             race = Hero("Elf", 40, 4)
             break
         else:
-            os.sytem("clear")
+            os.system("clear")
             print("I've not heard of that race before..\n"
                   "Please select one from the list.\n"
                   "(1) Human, (2) Dwarf or an (3) Elf\n")
