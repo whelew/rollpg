@@ -233,6 +233,9 @@ return new_damage #return 3 instead of 5
 |Weapon (Aquire Weapon)|User acquires a new weapon.|User finds a new weapon. Print statement will be printed letting the player know their new damage ranging from 1 to weapon.damage. Hero.attack is updated, when player starts new combat, the new stat will be printed instead of previous attack stat.|Pass|
 Inventory (Aquire Item)|User aquires instance of item.|When user aquires an instance of the class item it will be appended to the global inventory. Print statement of Inventory.items will be shown letting the player know what item they have aquired and that it has been added to inventory.|Pass|
 |Inventory (Check Item)|Inventory item will be matched against specified item name. If the names match, function value will be returned as True else False.|User aquires item and adds it to inventory from earlier function, later on function asks for specific item e.g. Key, if check item is returned as True do one thing, else False, do another thing.|Pass|
+|os.system("clear")|Clears Command Line Terminal|When a function is called with os.system("clear"), previous printed command line text will be cleared and replaced.|Pass|
+|random (choice)|Selects a random choice from a list of options.|An object from a list of events is randomly selected and returned as a function call.|Pass|
+|random (randint)|Selects a random integer between 1 and x|When randint is used, a random integer is selected between 1 and x, using if, elif, else statement specific response is chosen.|Pass|
 
 
 #### Bugs and Debugging
