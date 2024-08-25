@@ -635,7 +635,6 @@ def main():
     The main function call.
     Starts the game and calls every other function.
     """
-    event.time_loop()
     c_name = character_name()
     print(f'Yes... {c_name}, a very heroic name!\n')
     hero = select_race()
