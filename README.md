@@ -237,3 +237,21 @@ Before deploying you need to ensure your workspace is ready to deploy.
 5. Change your current working directory to the location where you want the clone directory.
 6. Type git clone, followed by the URL you copied. 
 7. Press enter to create your local clone.
+
+### Technologies
+
+- [GitHub](https://github.com/) was used for my repository location. I regularly committed and pushed my project changes to GitHub throughout the development.
+- [Visual Studio Code](https://code.visualstudio.com/) was my chosen IDE. 
+- [Heroku](https://dashboard.heroku.com/) was used to deploy the project.
+- [Lucid](https://www.lucidchart.com/) was used to help design my flow chart.
+- [w3schools](https://www.w3schools.com/) was used for trouble shooting.
+- [Code Institute](https://learn.codeinstitute.net/) was a main source for information when trouble shooting and deploying my project.
+- [Stack Overflow](https://stackoverflow.com/) was also used for trouble shooting.
+- [Slack](https://app.slack.com/) was a helpful place to find like minded people, a useful community when trouble shooting.
+- Everything was built using Python.
+- Specific import libraries used were **os** and **random**.
+
+### Credits
+
+- Special thanks to the student care team for helping me adjust my schedule.
+- Special thanks to my mentor Luke who has helped provide useful information and feedback. 
