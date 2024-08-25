@@ -10,7 +10,7 @@ class Weapon:
     def description(self):
         """Describe the weapon"""
         print(f"You have aquired {self.name}.\n"
-              "You now do between 1 and {self.damage} damage.\n")
+              f"You now do between 1 and {self.damage} damage.\n")
 
 
 class Item:
