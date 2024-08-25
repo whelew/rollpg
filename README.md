@@ -36,6 +36,7 @@ A Python terminal based Role Playing Game (RPG).
 
 ## [Testing](#testing-1)
 
+- [Function Test](#function-test)
 - [Bugs and Debugging](#bugs-and-debugging)
 - [PEP8 Validaiton](#pep8---validator)
 
@@ -212,8 +213,13 @@ return new_damage #return 3 instead of 5
 
 #### Function Test
 
-|Function  |Test      |Outcome	|Result |
+|Function  |Test/Operation      |Outcome	|Result |
 |:-------:|:--------:|:--------:|:--------:|
+|Hero|Creates an instance of Hero|User is asked to choose between (1) Human, (2) Dwarf or (3) Elf. After user chooses specific race, Hero class will be created based on choice.|Pass|
+|Weapon|Creates an instance of Weapon|When user aquires a weapon through a specific event, instance of weapon will be created, weapon.attack will update hero.attack as the next attack damage.|Pass|
+|Inventory|Creates an instance of Inventory|Inventory is called before main() function call. When user aquires item, it will be added to inventory. The inventory will then be printed after aquiring an item.|Pass|
+|Item|Creates Instance of Item|During gameplay instance of item will be created after specific events, item will then be added to inventory then printed to the terminal letting player know they have aquired an item.|Pass|
+|Monster|Creates Instance of Monster|During gameplay instance of monster will be created for combat purposes. When combat begins monsters attributes will be printed as stats for user to see.|Pass|
 |While True Statements Input 1, 2 or 3|If Input "1"|Result for input 1 would run.|Pass|
 ||elif Input "2"|Result for input 2 would run.|Pass|
 ||elif Input "3"|Result for input 3 would run.|Pass|
@@ -227,7 +233,7 @@ return new_damage #return 3 instead of 5
 |Weapon (Aquire Weapon)|User acquires a new weapon.|User finds a new weapon. Print statement will be printed letting the player know their new damage ranging from 1 to weapon.damage. Hero.attack is updated, when player starts new combat, the new stat will be printed instead of previous attack stat.|Pass|
 Inventory (Aquire Item)|User aquires instance of item.|When user aquires an instance of the class item it will be appended to the global inventory. Print statement of Inventory.items will be shown letting the player know what item they have aquired and that it has been added to inventory.|Pass|
 |Inventory (Check Item)|Inventory item will be matched against specified item name. If the names match, function value will be returned as True else False.|User aquires item and adds it to inventory from earlier function, later on function asks for specific item e.g. Key, if check item is returned as True do one thing, else False, do another thing.|Pass|
-   
+
 
 #### Bugs and Debugging
 
