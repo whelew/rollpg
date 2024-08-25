@@ -2,6 +2,8 @@
 
 A Python terminal based Role Playing Game (RPG). Using random events and a D&D style based dice rolling system for combat.
 
+![Image of Live Website deployed using Heroku](/assets/images/live-site-py.png)
+
 # Table of Contents
 
 ## [How to Play](#how-to-play-1)
@@ -101,12 +103,12 @@ However this did cause some issues, as I had to look back through all my functio
 
 ##### **Random**
 
-I used random specifically for its randInt function which would let me generate a random integer from 1 to n. n being any number I wish. 
+I used random specifically for its randint function which would let me generate a random integer from 1 to n. n being any number I wish. 
 
 Three main uses for random:
 
-1. Random event generating, when the user selects a choice in the game. Depending on the scenario, randInt would select one option of three. For example, It might be the case nothing happens, an enemy attacks you or you find a special item.
-2. The combat system, using the Hero and Monster class attack attribute, I could put the attack attribute value into the randInt(1, n) function. For example, damage = randInt(1, hero.attack). This would allow the damage to be randomly rolled between 1 and the users attack value. This worked well as when the user aquired a new weapon that would change the users attack value, the variable included in damage = randInt(1, hero.attack) would automatically know to use the new value.
+1. Random event generating, when the user selects a choice in the game. Depending on the scenario, randint would select one option of three. For example, It might be the case nothing happens, an enemy attacks you or you find a special item.
+2. The combat system, using the Hero and Monster class attack attribute, I could put the attack attribute value into the randint(1, n) function. For example, damage = randint(1, hero.attack). This would allow the damage to be randomly rolled between 1 and the users attack value. This worked well as when the user aquired a new weapon that would change the users attack value, the variable included in damage = randint(1, hero.attack) would automatically know to use the new value.
 3. Using random.choice to select a specific function inside the event module which I will describe below.
 
 #### Custom Modules Imports
