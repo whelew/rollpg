@@ -73,8 +73,8 @@ def begger():
     """
     print("You stumble across a helpless begger..")
     print('"Please Sir, Spare a coin?')
-    choice = input("please enter 1 to spare a coin, 2 to walk by:\n")
     while True:
+        choice = input("Please enter 1 to spare a coin, 2 to walk by:\n")
         if choice == "1":
             os.system("clear")
             outcome = [
@@ -100,7 +100,8 @@ def begger():
             print("The begger curses you, you can only turn left.\n")
             break
         else:
-            print("Please enter 1, 2:\n")
+            os.system("clear")
+            print("Any spare coins adventurer?\n")
 
 
 def time_loop():
@@ -114,8 +115,8 @@ def time_loop():
     """
     print("A portal appears in front of you.")
     print("Would you like to approach and interact with the portal?")
-    choice = input("please enter 1 for yes, 2 for no:\n")
     while True:
+        choice = input("Please enter 1 for yes, 2 for no:\n")
         if choice == "1":
             os.system("clear")
             print("You slowly approach the portal.")
@@ -132,7 +133,8 @@ def time_loop():
             print("Right...?\n")
             break
         else:
-            print("Please enter 1, 2:\n")
+            os.system("clear")
+            print("Would you like to approach the portal?\n")
 
 
 def random_event():

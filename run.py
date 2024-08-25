@@ -68,8 +68,10 @@ def select_race():
             race = Hero("Elf", 40, 4)
             break
         else:
+            os.sytem("clear")
             print("I've not heard of that race before..\n"
-                  "Please select one from the list.\n")
+                  "Please select one from the list.\n"
+                  "(1) Human, (2) Dwarf or an (3) Elf\n")
     os.system("clear")
     return race
 
@@ -128,6 +130,7 @@ def combat(enemy, hero):
                 print("You flee from combat")
                 return False
         else:
+            os.system("clear")
             print("You need to make a choice, 1 or 2?")
     return hero.stats()
 
@@ -159,6 +162,7 @@ def start_encounter(hero):
             print("You flee from the encounter.\n")
             break
         else:
+            os.system("clear")
             print("Please input 1 or 2")
 
 
@@ -256,6 +260,7 @@ def enter_forest(hero):
                 print("You let the BugBear pass.")
                 break
             else:
+                os.system("clear")
                 print("Please enter 1 or 2.\n")
     else:
         print("Your journey goes smoothly.\n"
@@ -277,8 +282,8 @@ def forest_middle(hero):
     print("You carry on down the path.\n"
           "You hear a sound coming from behind a rock.")
     print("Would you like to check out the noise?")
-    choice = input("1 for yes, 2 for no:\n")
     while True:
+        choice = input("1 for yes, 2 for no:\n")
         if choice == "1":
             chance = randint(1, 2)
             if chance == 1:
@@ -303,6 +308,7 @@ def forest_middle(hero):
             print("You carry on walking down the path.\n")
             break
         else:
+            os.system("clear")
             print("Please enter 1 or 2:")
 
 
@@ -338,6 +344,7 @@ def start_quest(hero):
             enter_forest(hero)
             break
         else:
+            os.system("clear")
             print("Please enter 1 or 2.")
 
 
@@ -557,6 +564,7 @@ def treasure_chest(hero):
             break
         else:
             print("Please enter 1 or 2:")
+            print("Check out the noise?")
 
 
 def rest():
@@ -627,6 +635,7 @@ def main():
     The main function call.
     Starts the game and calls every other function.
     """
+    event.time_loop()
     c_name = character_name()
     print(f'Yes... {c_name}, a very heroic name!\n')
     hero = select_race()
