@@ -210,6 +210,25 @@ return new_damage #return 3 instead of 5
 
 ### Testing
 
+#### Function Test
+
+|Function  |Test      |Outcome	|Result |
+|:-------:|:--------:|:--------:|:--------:|
+|While True Statements Input 1, 2 or 3|If Input "1"|Result for input 1 would run.|Pass|
+||elif Input "2"|Result for input 2 would run.|Pass|
+||elif Input "3"|Result for input 3 would run.|Pass|
+||else|"Please input either 1, 2 or 3" would be printed and Input would be prompted again.|Pass|
+|Combat (attack)|User Inputs "1" to attack during combat|Attack would be randomly calculated and subtracted from Hero and Enemy class health attributes. Command Line will be cleared, and updated stats will be printed out again along with input to attack or flee.|Pass|
+|Combat (flee)|User Inputs "2" to flee.|While True loop breaks, print statement saying "You flee from combat." printed, combat ends, the next linear function is called.|Pass|
+|Combat (Unable to flee)|User Inputs "2" to flee.|If enemy.name is a specific one that does not let the user escape, "You can not flee from this encounter." will be printed and input will be prompted again.|Pass|
+|Combat (Wrong Input)|User Inputs anything other than "1" or "2"|"You need to make a choice, 1 or 2?" will be printed to the terminal and the input will be prompted again.|Pass|
+|Combat(Hero Death)|If User health drops to 0 or below 0 the game will terminate using exit().|Users health goes to 0 or below 0 during combat. Print statement letting the player know they have died is printed, game is terminated.|Pass|
+|Combat(Enemy Death)|If enemy health drops to 0 or below combat will terminate.|Enemy health drops to 0 or below 0 during combat. Print statement letting the player know they have defeated the enemy. The next linear function is called.|Pass|
+|Weapon (Aquire Weapon)|User acquires a new weapon.|User finds a new weapon. Print statement will be printed letting the player know their new damage ranging from 1 to weapon.damage. Hero.attack is updated, when player starts new combat, the new stat will be printed instead of previous attack stat.|Pass|
+Inventory (Aquire Item)|User aquires instance of item.|When user aquires an instance of the class item it will be appended to the global inventory. Print statement of Inventory.items will be shown letting the player know what item they have aquired and that it has been added to inventory.|Pass|
+|Inventory (Check Item)|Inventory item will be matched against specified item name. If the names match, function value will be returned as True else False.|User aquires item and adds it to inventory from earlier function, later on function asks for specific item e.g. Key, if check item is returned as True do one thing, else False, do another thing.|Pass|
+   
+
 #### Bugs and Debugging
 
 - During the course of development a few bugs did occur.
