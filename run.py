@@ -141,8 +141,8 @@ def start_encounter(hero):
         reaction = input("Please type 1 for yes or 2 for no:\n")
         if reaction == "1":
             os.system("clear")
-            combat = combat(level_one, hero)
-            if combat == True:
+            value = combat(level_one, hero)
+            if value == True:
                 return True
             else:
                 return False
@@ -404,7 +404,7 @@ def healing_fountain(hero):
     print("Who have sinned and given in to the greedy.")
     print("Do not take from these waters, your fate will have no reward.\n")
     #\n to help readability
-    print("Do you want to drink from the fountains water?")
+    print("Do you want to drink from the fountains water?\n")
     value = inventory.is_item_in_inventory("Gold Ring")
     choice = input("Enter 1 or 2:\n")
     while True:
@@ -427,7 +427,7 @@ def healing_fountain(hero):
                 print("You hear a voice echo through your head...")
                 print("'You are pure of heart, let your strength return.'")
                 print("Your health has now been set too 125.")
-                print("You won't be needing luck from now on!")
+                print("You won't be needing luck from now on!\n")
                 h_health = 125
                 hero.hp = h_health
                 break
@@ -482,23 +482,34 @@ def rest():
     Gives user decision to rest before fighting final boss.
     Helps break up other function progress.
     """
-    print("")
-    take_rest = input("Take a rest, (1) yes or (2) no?\n")
-    if take_rest == "1":
-        ("You take a short rest and prepare yourself.\n")
-    else:
-        pass
-    print("You slowly enter the final cavern.")
-    print("You see a room filled with gold and jewels.")
-    print("On top of the great pile of riches lies a Dragon.")
-    print("He instantly senses you.\n")
+    print("Would you like to take a rest before continuing?")
+    while True:
+        take_rest = input("Take a rest, (1) yes or (2) no?\n")
+        if take_rest == "1":
+            os.system("clear")
+            print("You take a short rest and prepare yourself.")
+            print("You continue until...\n")
+            break
+        elif take_rest == "2":
+            os.system("clear")
+            break
+        else:
+            print("Please enter 1 or 2:")
 
 def final_boss(hero):
     value = inventory.is_item_in_inventory("Parchment")
     if value == True:
+        print("You remember the begger gave you a note.")
+        print("His weak spot is on his belly under his right leg.")
+        print("You have a feeling that information will come in handy.\n")
         dragon_lord = monster.dragon_paper()
     else:
         dragon_lord = monster.dragon_lord()
+
+    print("You slowly enter the final cavern.")
+    print("You see a room filled with gold and jewels.")
+    print("On top of the great pile of riches lies a Dragon.")
+    print("He instantly senses you.\n")    
     
     print("You dare enter my fortress. My kingdom.")
     print("I am the dragon lord. I go where I please.")
@@ -506,6 +517,22 @@ def final_boss(hero):
     print("You will find only death here.")
     print("Or have you come to bargin?\n")
     combat(dragon_lord, hero)
+
+def win_game(character_name):
+    """Print Win Game Text, exits program."""
+    print("You did it!\n"
+          "You killed the mighty Dragon Lord!\n"
+          "You've saved the village from his terror.\n"
+          "The cave dwellers can return to their cave now!\n"
+          f"You will be remembered {character_name}.\n"
+          "The mightest of heroes!\n")
+    print("Thanks for playing rollPG!\n"
+          "Congrats on beating the game!\n"
+          "Feel free to play again!\n")
+    exit()
+    
+    
+
     
 
 def main():
@@ -518,12 +545,14 @@ def main():
     forest_middle(hero)
     handle_event(inventory)
     t_stone_event(hero)
+    rest()
     cave = check_for_map()
     enter_cave(hero, cave)
     healing_fountain(hero)
     treasure_chest(hero)
     rest()
     final_boss(hero)
+    win_game(c_name)
     
 
 main()

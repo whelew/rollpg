@@ -74,6 +74,7 @@ def begger():
                 you! You have freed me from the curse that old hag put on me.\n""")]
             random_outcome = random.choice(outcome)
             if random_outcome == outcome[1]:
+                print("Here take this. The Begger hands you a note.")
                 parchment = item.Item("Parchment", "The note from the begger.")
                 print(random_outcome)
                 return parchment
