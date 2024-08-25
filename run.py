@@ -467,15 +467,15 @@ def healing_fountain(hero):
     User hp does not change.
     """
     print("Congratulations, you managed to survive the cave system!")
-    print("Fortunately for you a mystical light appears ahead of you.")
+    print("A mystical light appears ahead of you.")
     print("You head towards it, it looks like a water fountain.")
-    print("There is an inscription written in the middle of the fountain.")
+    print("There is an inscription written on the middle of the fountain.")
     print("It reads...\n")
     # \n to help readability
     print("For those kind of heart and who seek no riches.")
     print("Drink from me and you shall be restored stronger than before.")
     print("For those who have taken from the needy.")
-    print("Who have sinned and given in to the greedy.")
+    print("Who have sinned and given into the greedy.")
     print("Do not take from these waters, your fate will have no reward.\n")
     # \n to help readability
     print("Do you want to drink from the fountains water?\n")
