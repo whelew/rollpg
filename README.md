@@ -34,10 +34,18 @@ A Python terminal based Role Playing Game (RPG).
 - [Armour](#armour)
 - [Video Game](#video-game)
 
+## [Testing](#testing-1)
+
+- [PEP8 Validaiton](#pep8---validator)
+
 ## [Deployment](#deployment-1)
 
 - [Deploying to Heroku](#deploying-to-heroku)
 - [Cloning](#cloning)
+
+## [Technologies](#technologies-1)
+
+## [Credits](#credits-1)
 
 ### How to Play
 
@@ -199,7 +207,23 @@ return new_damage #return 3 instead of 5
 - I would like to be able to turn this command line rpg into an actual video game, for example an 8 bit top down style video game like Pokemon. Where the user is able to walk around a map and interact with none player characters, go to specific locations, check their inventory whenever they would like. Have an interactive combat system where you can physically see your character make an animation. This would take a long time to code and skills I have not yet aquired. 
 - I would most likely start by using [PYGame](https://github.com/pygame/pygame) which is a free and open-source cross platform library used in the development of multimedia applications like video games using Python.
 
+### Testing
 
+#### PEP8 - Validator
+
+I used the [Code Institute Python Linter](https://pep8ci.herokuapp.com/#) to check all my py files for errors. This was useful in fixing any syntax errors such as whitespace.
+
+- **run.py**
+![PEP8 validation image of .py](/assets/images/pep8-runpy.png)
+
+- **item.py**
+![PEP8 validation image of .py](/assets/images/pep8-item.png)
+
+- **event.py**
+![PEP8 validation image of .py](/assets/images/pep8-event.png)
+
+- **monster.py**
+![PEP8 validation image of .py](/assets/images/pep8-monster.png)
 
 ### Deployment
 
