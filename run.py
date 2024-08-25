@@ -55,7 +55,7 @@ def select_race():
     the user will be told to select one from the list.
     """
     while True:
-        print("Now select a race, are you a Human, Dwarf or an Elf")
+        print("Now select a race, are you a (1) Human, (2) Dwarf or an (3) Elf")
         pick_race = input("Enter 1, 2, or 3:\n")
         race = pick_race
         if race == "1":
