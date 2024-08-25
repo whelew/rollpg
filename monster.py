@@ -49,7 +49,7 @@ def goblin_encounter():
     return goblin
 
 def bugbear():
-    bugbear = Monster("BugBear", 15, 3)
+    bugbear = Monster("Bug Bear", 15, 3)
     return bugbear
 
 def dragon_lord():

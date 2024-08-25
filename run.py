@@ -102,7 +102,7 @@ def combat(enemy, hero):
                 os.system("clear")
                 print(f"You successfully killed the {e_name}!\n")
                 hero.hp = h_health
-                break
+                return True
             if h_health <= 0:
                 os.system("clear")
                 print("I'm sorry to say this... but you died.")
@@ -114,15 +114,19 @@ def combat(enemy, hero):
         elif choice == "2":
             dragon_lord = "Dragon Lord"
             cave_monster = "Cave Monster"
+            bug_bear = "Bug Bear"
             os.system("clear")
             if enemy.name == dragon_lord:
                 print("You can not flee from the Dragon Lord!\n")
             elif enemy.name == cave_monster:
                 print("You can not flee from this combat!\n")
                 print("You have to keep fighting!\n")
+            elif enemy.name == bug_bear:
+                print("You started this, you can't flee now!")
+                print("You have to keep fighting!\n")
             else:
                 print("You flee from combat")
-                break
+                return False
         else:
             print("You need to make a choice, 1 or 2?")
     
@@ -137,8 +141,11 @@ def start_encounter(hero):
         reaction = input("Please type 1 for yes or 2 for no:\n")
         if reaction == "1":
             os.system("clear")
-            combat(level_one, hero)
-            break
+            combat = combat(level_one, hero)
+            if combat == True:
+                return True
+            else:
+                return False
         elif reaction == "2":
             os.system("clear")
             print("You flee from the encounter.\n")
@@ -230,12 +237,17 @@ def forest_middle(hero):
                 os.system("clear")
                 print("You see a creature eating a human for lunch.")
                 print("It sees you looking its way.\n")
-                start_encounter(hero)
-                print("It looks like the creaute was trying to hide an item.\n")
-                map = Item("Map", "A map of the dungeon, this might come in handy...")
-                inventory.add_item(map)
-                inventory.display_inventory()
-                break
+                combat = start_encounter(hero)
+                if combat == True:
+                    print("It looks like the creaute was trying to hide an item.\n")
+                    map = Item("Map", "A map of the dungeon, this might come in handy...")
+                    inventory.add_item(map)
+                    inventory.display_inventory()
+                    break
+                else:
+                    print("You decide it's probably best to leave it alone.")
+                    print("You have a quest to focus on anyway.\n")
+                    break
             else:
                 pass
         elif choice == "2":
