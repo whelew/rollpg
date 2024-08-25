@@ -6,8 +6,24 @@ A Python terminal based Role Playing Game (RPG).
 
 
 ## [How to Play](#how-to-play-1)
+
 ## [Objective](#objective-1)
+
+- [Key Features](#key-features)
+
 ## [Design](#design-1)
+
+### [Import List](#imports)
+
+- [os](#os)
+- [random](#random)
+
+### [Custom Modules Imports](#custom-modules-imports-1)
+
+- [monster](#monster)
+- [item](#item)
+- [Item, Inventory, Weapon](#Item-Inventory-Weapon)
+- [event](#event)
 
 ### How to Play
 
@@ -32,3 +48,55 @@ The main objective of this project was to create a command line based Role Playi
 
 
 ### Design
+
+#### Imports
+
+###### os
+
+###### random
+
+I used random specifically for its randInt function which would let me generate a random integer from 1 to n. n being any number I wish. 
+
+Three main uses for random:
+
+1 Random event generating, when the user selects a choice in the game. Depending on the scenario, randInt would select one option of three. For example, It might be the case nothing happens, an enemy attacks you or you find a special item.
+2 The combat system, using the Hero and Monster class attack attribute, I could put the attack attribute value into the randInt(1, n) function. For example, damage = randInt(1, hero.attack). This would allow the damage to be randomly rolled between 1 and the users attack value. This worked well as when the user aquired a new weapon that would change the users attack value, the variable included in damage = randInt(1, hero.attack) would automatically know to use the new value.
+3 Using random.choice to select a specific function inside the event module which I will describe below.
+
+#### Custom Modules Imports
+
+A lot of the features I wanted to include the game would have taken up a lot of space in the run.py file, therefore creating new custom modules I could then import into the run.py file seemed more appropriate. This did cause a few scope issues that is why the invetory is called globally so it can be accessed at any point during the game.
+
+###### monster
+
+- Creates an Instance of Monster with the attributes(name, hp, attack)
+- Includes a random_encounter function that uses randInt to select from a list of 10 different instances of Monster.
+- Future Implementation, use random.choice on 3 seperate lists.
+1 List of Names
+2 List of integers for health
+3 List of integers for attack
+- Add these new values to one instance of Monster and return this instead. It would be a lot cleaner to read if done this way and also increases randomness, you would have one instance of goblin that would be very strong and another time it would be very weak.  
+
+###### item
+
+###### Item-Inventory-Weapon
+
+###### event
+
+The event module has currently 3 main functions defined inside of it. These act as in game events. The purpose of this module was to create a random event, which would change on each play through. This is decided by using random.choice.
+
+A random function is selected using random.choice out of a list of function names. Once selected the result would then be returned as a function call.
+
+Example: 
+def function1():
+    #Do Something
+
+def function2():
+    #Do something different
+
+def function3():
+    #Do something else
+
+def random_event():
+    result = random.choice(function1, function2, function 3)
+    return result() #the () calls the function.
