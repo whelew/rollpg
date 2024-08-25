@@ -487,8 +487,8 @@ def healing_fountain(hero):
     # \n to help readability
     print("Do you want to drink from the fountains water?\n")
     value = inventory.is_item_in_inventory("Gold Ring")
-    choice = input("Enter 1 or 2:\n")
     while True:
+        choice = input("Enter 1 or 2:\n")
         if choice == "1":
             if value is True:
                 os.system("clear")
@@ -519,7 +519,8 @@ def healing_fountain(hero):
             print("You delve deeper.\n")
             break
         else:
-            print("Please enter 1 or 2:\n")
+            os.system("clear")
+            print("Do you want to drink from the fountains water?\n")
 
 
 def treasure_chest(hero):
@@ -541,8 +542,8 @@ def treasure_chest(hero):
 
     print("Would you like to open the chest?")
     open_chest = inventory.is_item_in_inventory("Key")
-    choice = input("Enter 1 or 2:")
     while True:
+        choice = input("Enter 1 for yes or 2 for no:")
         if choice == "1":
             os.system("clear")
             print("You try to open the chest.")
@@ -563,8 +564,8 @@ def treasure_chest(hero):
             print("Best to leave it alone.\n")
             break
         else:
-            print("Please enter 1 or 2:")
-            print("Check out the noise?")
+            os.system("clear")
+            print("Would you like to open the chest:\n")
 
 
 def rest():
@@ -584,7 +585,8 @@ def rest():
             os.system("clear")
             break
         else:
-            print("Please enter 1 or 2:")
+            os.system("clear")
+            print("Please enter 1 or 2:\n")
 
 
 def final_boss(hero):
