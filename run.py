@@ -249,6 +249,7 @@ def enter_forest(hero):
             print("Would you like to attack the BugBear?")
             engage = input("Enter 1 to attack or 2 to let him pass:\n")
             if engage == "1":
+                os.system("clear")
                 bug_bear = monster.bugbear()
                 combat(bug_bear, hero)
                 print("You open the chest and find.. a key.")
