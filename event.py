@@ -59,7 +59,11 @@ def stranger():
             print("Gain 50 karma.\n")
             break
         else:
-            print("Please enter 1, 2 or 3.")
+            os.system("clear")
+            print("What do you want to do with the helpless stranger?")
+            print("Do you (1) aid them?\n"
+                  "(2) steal their belongings?\n"
+                  "or (3) put them out of their misery?\n")
 
 
 def begger():

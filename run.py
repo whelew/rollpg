@@ -163,7 +163,7 @@ def start_encounter(hero):
             break
         else:
             os.system("clear")
-            print("Please input 1 or 2")
+            print("Do you want to attack?\n")
 
 
 def cave_encounter(hero):
@@ -310,7 +310,8 @@ def forest_middle(hero):
             break
         else:
             os.system("clear")
-            print("Please enter 1 or 2:")
+            print("Do you want to check out the noise?")
+            print("Please enter 1 or 2:\n")
 
 
 def start_quest(hero):
@@ -544,7 +545,7 @@ def treasure_chest(hero):
     print("Would you like to open the chest?")
     open_chest = inventory.is_item_in_inventory("Key")
     while True:
-        choice = input("Enter 1 for yes or 2 for no:")
+        choice = input("Enter 1 for yes or 2 for no:\n")
         if choice == "1":
             os.system("clear")
             print("You try to open the chest.")
