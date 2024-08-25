@@ -303,6 +303,7 @@ def forest_middle(hero):
                     print("You have a quest to focus on anyway.\n")
                     break
             else:
+                os.system("clear")
                 print("It turns out it was just a bird singing a song")
                 print("So you decide to carry on walking.")
                 break

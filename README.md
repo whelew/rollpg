@@ -279,6 +279,13 @@ Inventory (Aquire Item)|User aquires instance of item.|When user aquires an inst
 - I then added flavour text inside of the else statement to allow the decision to be more clear after the os.system("clear") event.
 - In future instances using a Try and Except statement would have proved more helpful in this scenario.
 
+**Rest Function**
+- Unresolved Bug
+- The rest() function call, designed to split up the functions so the command line does not fill with to much text at once works as intended.
+- However, if the person rests, after entering the caves, the text stays permanently. I am unsure why this is occuring.
+- It might be due to the amount of text that follows the second rest() function call. Due to the deployed projects terminal it only clears the current command line in vue.
+- It does not effect the gameplay in anyway, but this will need to be fixed in the future.
+
 #### PEP8 - Validator
 
 I used the [Code Institute Python Linter](https://pep8ci.herokuapp.com/#) to check all my py files for errors. This was useful in fixing any syntax errors such as whitespace.
