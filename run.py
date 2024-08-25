@@ -217,7 +217,6 @@ def enter_forest(hero):
             else:
                 print("Please enter 1 or 2.\n")
     else:
-        os.system("clear")
         print("Your journey goes smoothly and nothing out of the ordinary occurs.\n")
 
 def forest_middle(hero):
