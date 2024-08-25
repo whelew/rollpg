@@ -272,6 +272,13 @@ Inventory (Aquire Item)|User aquires instance of item.|When user aquires an inst
 - I had thought about doing the same with the Hero class and the character name. Setting up the Hero class globally would be useful because a lot of my functions use hero as an argument in the main() function, and it might get confusing if another developer was working on this game.
 - It was a fun challenge working around this, for example the combat system could have been a lot easier if I set up the monster and hero class instances globally. But i was able to figure out an appropriate method that performed the way I wanted it to perform.
 
+**While Loop Invalid Input**
+- During play testing if an invalid input was put in for example any number other than 1 or 2, a letter or nothing at all. Certain while loops would loop endlessly.
+- This was due to the input being outside of the While loop. 
+- I updated and amended all instances of this occuring. 
+- I then added flavour text inside of the else statement to allow the decision to be more clear after the os.system("clear") event.
+- In future instances using a Try and Except statement would have proved more helpful in this scenario.
+
 #### PEP8 - Validator
 
 I used the [Code Institute Python Linter](https://pep8ci.herokuapp.com/#) to check all my py files for errors. This was useful in fixing any syntax errors such as whitespace.
