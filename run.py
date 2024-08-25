@@ -35,7 +35,7 @@ def character_name():
     print("Are you ready to take on the challenge!")
     print("To begin your new adventure we need a name.\n")
     while True:
-        name = input("What is your characters name:")
+        name = input("What is your characters name:\n")
         if any(n.isdigit() for n in name):
             print("You can't have a number in your name... please try again.")
         elif name.isspace() == True:
