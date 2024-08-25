@@ -614,7 +614,7 @@ def win_game(character_name):
           "You killed the mighty Dragon Lord!\n"
           "You've saved the village from his terror.\n"
           "The cave dwellers can return to their cave now!\n"
-          f"You will be remembered {character_name}.\n"
+          f"You will be remembered {character_name}\n"
           "The mightest of heroes!\n")
     print("Thanks for playing rollPG!\n"
           "Congrats on beating the game!\n"
