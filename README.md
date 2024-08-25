@@ -28,6 +28,12 @@ A Python terminal based Role Playing Game (RPG).
 
 ## [Future Features](#future-features-1)
 
+### [Interactive Inventory](#interactive-inventory-1)
+
+### [Armour](#armour-1)
+
+### [Video Game](#video-game-1)
+
 ## [Deployment](#deployment-1)
 
 - [Deploying to Heroku](#deploying-to-heroku)
@@ -62,6 +68,13 @@ The main objective of this project was to create a command line based Role Playi
 ### Design
 
 #### Flow Chart
+
+A mock up flow chart of how my game will run. 
+
+- The game runs linear however using a series of user decisions the game will return a result depending on decision.
+- Using import random creates random processes and will increase replay ability.
+- There is one element missing on the flow chart, the combat system, whenever combat occurs because of a result of user decision, the user might die. 
+- Whenever the user dies because of combat, the game will use the exit() function and be terminated. 
 
 ![Image of my Flow Chart](/assets/images/flow-chart.png)
 
@@ -141,14 +154,40 @@ def function3():
 
 def random_event():
     result = random.choice(function1, function2, function 3)
-    return result() #the () calls the function.
+    return result() #The () calls the function.
 
 ### Future Features
+
+#### Interactive Inventory
+
+- Being able to interact with the inventory at any point would be very useful, having a function that would load the player stats as well as the inventory.
+- This would allow me to introduce healing items, weapons suited for certain enemies, armour you can equip and change out.
+- It would be a very fun feature however it would make scope a very difficult issue as well as the linear style of the game.
+- I could possible make a function that is called before the main() call in which whenever the player types "Inventory" it will pause the main() function and then print out player stats and items.
+
+#### Armour
+
+- I would introduce a new class called Armour. This would allow the player to equip new armour they find during the game.
+- The attributes would be defence and description.
+- I would need to add defence as an attribute to both Hero and Monster classes, and create a function that would update the defence of the Hero class whenever the user aquired new armour, similar to the aquire_weapon function.
+- The Defence would take the calculated damage integer and then subtract the defence off that integer.
+- Example:
+
+damage = randint(1, 10)
+defence = hero.defence #example 2
+new_damage = damage - defence # 5 - 2 = 3
+return new_damage #return 3 instead of 5
+
+#### Video Game 
+
+- I would like to be able to turn this command line rpg into an actual video game, for example an 8 bit top down style video game like Pokemon. Where the user is able to walk around a map and interact with none player characters, go to specific locations, check their inventory whenever they would like. Have an interactive combat system where you can physically see your character make an animation. This would take a long time to code and skills I have not yet aquired. 
+- I would most likely start by using [PYGame](https://github.com/pygame/pygame) which is a free and open-source cross platform library used in the development of multimedia applications like video games using Python.
+
 
 
 ### Deployment
 
-To be able to share my working project for the assessment, I used the Code Institute python template which included most of the files that would be needed to get it working in a mock terminal. I deployed my project to [Heroku](https://dashboard.heroku.com/)
+To be able to share my working project for the assessment, I used the Code Institute python template which included most of the files that would be needed to get it working in a mock terminal. I deployed my project to [Heroku](https://dashboard.heroku.com/).
 
 #### Deploying to Heroku
 
